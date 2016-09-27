@@ -23,5 +23,7 @@ namespace BookShopInventoryApp.Models
         public int PublisherId { get; set; }
         public string PublisherName { get; set; }
         public IEnumerable<SelectListItem> Publishers { get; set; }
+        public int ISBN { get; set; }
+        public int StockLevel { get; set; }
     }
     }

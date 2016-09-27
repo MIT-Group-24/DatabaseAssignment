@@ -4,7 +4,9 @@
     <Type Name="Publisher">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Year" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Publisher_BOOK" Member="BOOKs" ThisKey="Id" OtherKey="PublisherId" Type="BOOK" />
     </Type>
   </Table>
@@ -16,6 +18,8 @@
       <Column Name="Year" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
       <Column Name="Price" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
       <Column Name="PublisherId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ISBN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StockLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Publisher_BOOK" Member="Publisher" ThisKey="PublisherId" OtherKey="Id" Type="Publisher" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>

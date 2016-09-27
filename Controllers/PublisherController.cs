@@ -29,7 +29,9 @@ namespace BookInventoryApp.Controllers
                 {
                     Id = publisherData.Id,
                     Name = publisherData.Name,
-                   Year = Convert.ToInt32(publisherData.Year)
+                    Address = publisherData.Address,
+                    PhoneNumber = Convert.ToInt32(publisherData.PhoneNumber)
+                  // Year = Convert.ToInt32(publisherData.Year)
                 });
             }
             return View(publisherList);
@@ -49,7 +51,9 @@ namespace BookInventoryApp.Controllers
                 Publisher publisher = new Publisher()
                 {
                     Name = model.Name,
-                    Year = model.Year.ToString()
+                    Address = model.Address,
+                    PhoneNumber = model.PhoneNumber
+                    //Year = model.Year.ToString()
                 };
                 context.Publishers.InsertOnSubmit(publisher);
                 context.SubmitChanges();

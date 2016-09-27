@@ -97,6 +97,10 @@ namespace BookShopInventoryApp.Models
 		
 		private string _Year;
 		
+		private string _Address;
+		
+		private System.Nullable<int> _PhoneNumber;
+		
 		private EntitySet<BOOK> _BOOKs;
 		
     #region Extensibility Method Definitions
@@ -109,6 +113,10 @@ namespace BookShopInventoryApp.Models
     partial void OnNameChanged();
     partial void OnYearChanging(string value);
     partial void OnYearChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnPhoneNumberChanging(System.Nullable<int> value);
+    partial void OnPhoneNumberChanged();
     #endregion
 		
 		public Publisher()
@@ -157,7 +165,7 @@ namespace BookShopInventoryApp.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Year", DbType="NVarChar(4) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Year", DbType="NVarChar(4)")]
 		public string Year
 		{
 			get
@@ -173,6 +181,46 @@ namespace BookShopInventoryApp.Models
 					this._Year = value;
 					this.SendPropertyChanged("Year");
 					this.OnYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="Int")]
+		public System.Nullable<int> PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this.OnPhoneNumberChanging(value);
+					this.SendPropertyChanging();
+					this._PhoneNumber = value;
+					this.SendPropertyChanged("PhoneNumber");
+					this.OnPhoneNumberChanged();
 				}
 			}
 		}
@@ -241,6 +289,10 @@ namespace BookShopInventoryApp.Models
 		
 		private int _PublisherId;
 		
+		private int _ISBN;
+		
+		private int _StockLevel;
+		
 		private EntityRef<Publisher> _Publisher;
 		
     #region Extensibility Method Definitions
@@ -259,6 +311,10 @@ namespace BookShopInventoryApp.Models
     partial void OnPriceChanged();
     partial void OnPublisherIdChanging(int value);
     partial void OnPublisherIdChanged();
+    partial void OnISBNChanging(int value);
+    partial void OnISBNChanged();
+    partial void OnStockLevelChanging(int value);
+    partial void OnStockLevelChanged();
     #endregion
 		
 		public BOOK()
@@ -387,6 +443,46 @@ namespace BookShopInventoryApp.Models
 					this._PublisherId = value;
 					this.SendPropertyChanged("PublisherId");
 					this.OnPublisherIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="Int NOT NULL")]
+		public int ISBN
+		{
+			get
+			{
+				return this._ISBN;
+			}
+			set
+			{
+				if ((this._ISBN != value))
+				{
+					this.OnISBNChanging(value);
+					this.SendPropertyChanging();
+					this._ISBN = value;
+					this.SendPropertyChanged("ISBN");
+					this.OnISBNChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockLevel", DbType="Int NOT NULL")]
+		public int StockLevel
+		{
+			get
+			{
+				return this._StockLevel;
+			}
+			set
+			{
+				if ((this._StockLevel != value))
+				{
+					this.OnStockLevelChanging(value);
+					this.SendPropertyChanging();
+					this._StockLevel = value;
+					this.SendPropertyChanged("StockLevel");
+					this.OnStockLevelChanged();
 				}
 			}
 		}
