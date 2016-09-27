@@ -10,7 +10,7 @@ namespace BookShopInventoryApp.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "MIT 813 Database Assignment";
 
             return View();
         }
