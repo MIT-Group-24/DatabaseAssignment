@@ -30,7 +30,7 @@ namespace BookInventoryApp.Controllers
                     Id = publisherData.Id,
                     Name = publisherData.Name,
                     Address = publisherData.Address,
-                    PhoneNumber = Convert.ToInt32(publisherData.PhoneNumber)
+                    PhoneNumber = publisherData.PhoneNumber
                   // Year = Convert.ToInt32(publisherData.Year)
                 });
             }

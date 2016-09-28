@@ -39,7 +39,9 @@ namespace BookInventoryApp.Controllers
                             PublisherName = publisher.Name,
                             Author = book.Author,
                             Year = book.Year,
-                            Price = book.Price
+                            Price = book.Price,
+                            ISBN = book.ISBN,
+                            StockLevel = book.StockLevel
                         };
             BookList = query.ToList();
             return View(BookList);
@@ -55,6 +57,8 @@ namespace BookInventoryApp.Controllers
                                                     Author = x.Author,
                                                     Price = x.Price,
                                                     Year = x.Year,
+                                                    ISBN = x.ISBN,
+                                                    StockLevel = x.StockLevel,
                                                     PublisherName = x.Publisher.Name
                                                 }).SingleOrDefault();
 
@@ -79,6 +83,8 @@ namespace BookInventoryApp.Controllers
                     Author = model.Author,
                     Year = model.Year,
                     Price = model.Price,
+                    ISBN = model.ISBN,
+                    StockLevel = model.StockLevel,
                     PublisherId = model.PublisherId
                 };
                 context.BOOKs.InsertOnSubmit(book);
@@ -100,6 +106,8 @@ namespace BookInventoryApp.Controllers
                                     Author = x.Author,
                                     Price = x.Price,
                                     Year = x.Year,
+                                    ISBN = x.ISBN,
+                                    StockLevel = x.StockLevel,
                                     PublisherId = x.PublisherId
                                 }).SingleOrDefault();
 
@@ -118,6 +126,8 @@ namespace BookInventoryApp.Controllers
                 book.Author = model.Author;
                 book.Price = model.Price;
                 book.Year = model.Year;
+                book.ISBN = model.ISBN;
+                book.StockLevel = model.StockLevel;
                 book.PublisherId = model.PublisherId;
                 context.SubmitChanges();
                 return RedirectToAction("Index");
@@ -139,6 +149,8 @@ namespace BookInventoryApp.Controllers
                                       Author = x.Author,
                                       Price = x.Price,
                                       Year = x.Year,
+                                      ISBN = x.ISBN,
+                                      StockLevel = x.StockLevel,
                                       PublisherName = x.Publisher.Name
                                   }).SingleOrDefault();
             return View(model);

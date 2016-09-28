@@ -21,9 +21,11 @@ namespace BookShopInventoryApp.Models
         public decimal Price { get; set; }
         [DisplayName("Publisher")]
         public int PublisherId { get; set; }
+        [DisplayName("Publisher")]
         public string PublisherName { get; set; }
         public IEnumerable<SelectListItem> Publishers { get; set; }
-        public int ISBN { get; set; }
+        public string ISBN { get; set; }
+        [DisplayName("Stock Level")]
         public int StockLevel { get; set; }
     }
     }

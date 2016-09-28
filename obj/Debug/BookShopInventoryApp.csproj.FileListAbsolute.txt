@@ -140,3 +140,4 @@ C:\Users\test01\Desktop\BookShopInventoryApp\BookShopInventoryApp\DatabaseAssign
 C:\Users\test01\Desktop\BookShopInventoryApp\BookShopInventoryApp\DatabaseAssignment\bin\ja\WebMatrix.WebData.resources.dll
 C:\Users\test01\Desktop\BookShopInventoryApp\BookShopInventoryApp\DatabaseAssignment\obj\Debug\BookShopInventoryApp.dll
 C:\Users\test01\Desktop\BookShopInventoryApp\BookShopInventoryApp\DatabaseAssignment\obj\Debug\BookShopInventoryApp.pdb
+C:\Users\test01\Desktop\BookShopInventoryApp\BookShopInventoryApp\DatabaseAssignment\obj\Debug\BookShopInventoryApp.csprojResolveAssemblyReference.cache

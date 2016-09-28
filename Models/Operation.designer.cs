@@ -99,7 +99,7 @@ namespace BookShopInventoryApp.Models
 		
 		private string _Address;
 		
-		private System.Nullable<int> _PhoneNumber;
+		private string _PhoneNumber;
 		
 		private EntitySet<BOOK> _BOOKs;
 		
@@ -115,7 +115,7 @@ namespace BookShopInventoryApp.Models
     partial void OnYearChanged();
     partial void OnAddressChanging(string value);
     partial void OnAddressChanged();
-    partial void OnPhoneNumberChanging(System.Nullable<int> value);
+    partial void OnPhoneNumberChanging(string value);
     partial void OnPhoneNumberChanged();
     #endregion
 		
@@ -205,8 +205,8 @@ namespace BookShopInventoryApp.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="Int")]
-		public System.Nullable<int> PhoneNumber
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NChar(11) NOT NULL", CanBeNull=false)]
+		public string PhoneNumber
 		{
 			get
 			{
@@ -289,7 +289,7 @@ namespace BookShopInventoryApp.Models
 		
 		private int _PublisherId;
 		
-		private int _ISBN;
+		private string _ISBN;
 		
 		private int _StockLevel;
 		
@@ -311,7 +311,7 @@ namespace BookShopInventoryApp.Models
     partial void OnPriceChanged();
     partial void OnPublisherIdChanging(int value);
     partial void OnPublisherIdChanged();
-    partial void OnISBNChanging(int value);
+    partial void OnISBNChanging(string value);
     partial void OnISBNChanged();
     partial void OnStockLevelChanging(int value);
     partial void OnStockLevelChanged();
@@ -447,8 +447,8 @@ namespace BookShopInventoryApp.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="Int NOT NULL")]
-		public int ISBN
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="NChar(13) NOT NULL", CanBeNull=false)]
+		public string ISBN
 		{
 			get
 			{

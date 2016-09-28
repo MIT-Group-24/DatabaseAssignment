@@ -1,10 +1,10 @@
 ﻿@model BookShopInventoryApp.Models.BookModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add Book";
 }
 
-<h2>Edit</h2>
+<h2>Add Book</h2>
 @using (Html.BeginForm())
 {
     <fieldset>
@@ -29,10 +29,22 @@
             @Html.EditorFor(model => model.Year)
         </div>
         <div class="editor-label">
+            @Html.LabelFor(model => model.ISBN)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ISBN)
+        </div>
+        <div class="editor-label">
             @Html.LabelFor(model => model.Price)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Price)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StockLevel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StockLevel)
         </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.PublisherId)

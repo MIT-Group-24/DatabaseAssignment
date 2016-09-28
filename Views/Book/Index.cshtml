@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<BookShopInventoryApp.Models.BookModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Books";
 }
 
-<h2>Index</h2>
+<h2>List of Books</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add Book", "Create")
 </p>
 <table>
     <tr>
@@ -21,14 +21,19 @@
             @Html.DisplayNameFor(model => model.Year)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PublisherId)
+            @Html.DisplayNameFor(model => model.StockLevel)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PublisherName)
         </th>
+        
+        
         <th></th>
     </tr>
 
@@ -44,14 +49,19 @@
             @Html.DisplayFor(modelItem => item.Year)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PublisherId)
+            @Html.DisplayFor(modelItem => item.StockLevel)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PublisherName)
         </td>
+        
+        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
