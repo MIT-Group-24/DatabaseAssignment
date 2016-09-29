@@ -7,6 +7,8 @@
 <h2>Add Book</h2>
 @using (Html.BeginForm())
 {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
     <fieldset>
         <legend>BookModel</legend>
         @Html.HiddenFor(model => model.Id)
@@ -15,36 +17,42 @@
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
         </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.Author)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Author)
+            @Html.ValidationMessageFor(model => model.Author)
         </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.Year)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Year)
+            @Html.ValidationMessageFor(model => model.Year)
         </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.ISBN)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.ISBN)
+            @Html.ValidationMessageFor(model => model.ISBN)
         </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.Price)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
         </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.StockLevel)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.StockLevel)
+            @Html.ValidationMessageFor(model => model.StockLevel)
         </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.PublisherId)
