@@ -166,7 +166,6 @@ C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\System.Net.Htt
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\System.Web.Helpers.xml
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\System.Web.Http.xml
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\System.Web.Http.WebHost.xml
-C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\System.Web.Mvc.xml
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\System.Web.Razor.xml
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\System.Web.WebPages.xml
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\System.Web.WebPages.Deployment.xml
@@ -174,7 +173,6 @@ C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\System.Web.Web
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\WebMatrix.Data.xml
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\Microsoft.Web.WebPages.OAuth.xml
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\WebMatrix.WebData.xml
-C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\ja\System.Web.Mvc.resources.dll
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\obj\Debug\BookShopInventoryApp.csprojResolveAssemblyReference.cache
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\obj\Debug\BookShopInventoryApp.dll
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\obj\Debug\BookShopInventoryApp.pdb

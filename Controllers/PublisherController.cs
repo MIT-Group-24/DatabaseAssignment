@@ -64,5 +64,18 @@ namespace BookInventoryApp.Controllers
                 return View(model);
             }
         }
+        public ActionResult Details(int id)
+        {
+            PublisherModel model = context.Publishers.Where(x => x.Id == id).Select(x =>
+                                                new PublisherModel()
+                                                {
+                                                    Id = x.Id,
+                                                    Name = x.Name,
+                                                    Address = x.Address,
+                                                    PhoneNumber = x.PhoneNumber
+                                                }).SingleOrDefault();
+
+            return View(model);
+        }
     }
 }
