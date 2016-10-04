@@ -5,833 +5,787 @@
   </assembly>
   <members>
     <member name="T:WebMatrix.WebData.ExtendedMembershipProvider">
-      <summary>
-        <see cref="T:System.Web.Security.MembershipProvider" /> クラスで提供されるメンバーシップ システムの拡張に使用する抽象クラスを表します。</summary>
+      <summary>Represents an abstract class that is used to extend the membership system that is provided by the <see cref="T:System.Web.Security.MembershipProvider" /> class.</summary>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.#ctor">
-      <summary>派生クラスでオーバーライドされた場合、<see cref="T:WebMatrix.WebData.ExtendedMembershipProvider" /> クラスの新しいインスタンスをインスタンス化します。</summary>
+      <summary>When overridden in a derived class, instantiates a new instance of the <see cref="T:WebMatrix.WebData.ExtendedMembershipProvider" /> class.</summary>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.ConfirmAccount(System.String)">
-      <summary>保留中のメンバーシップ アカウントを有効化します。</summary>
-      <returns>アカウントが確認された場合は true、それ以外の場合は false。</returns>
-      <param name="accountConfirmationToken">認証プロバイダーに渡す確認トークン。</param>
+      <summary>Activates a pending membership account.</summary>
+      <returns>true if the account is confirmed; otherwise, false.</returns>
+      <param name="accountConfirmationToken">A confirmation token to pass to the authentication provider.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.ConfirmAccount(System.String,System.String)">
-      <summary>指定されたユーザーの、保留されているメンバーシップ アカウントをアクティブにします。</summary>
-      <returns>アカウントが確認された場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="accountConfirmationToken">認証プロバイダーに渡す確認トークン。</param>
+      <summary>Activates a pending membership account for the specified user.</summary>
+      <returns>true if the account is confirmed; otherwise, false.</returns>
+      <param name="userName">The user name.</param>
+      <param name="accountConfirmationToken">A confirmation token to pass to the authentication provider.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.CreateAccount(System.String,System.String)">
-      <summary>指定されたユーザー名とパスワードを使用して、新しいユーザー アカウントを作成します。</summary>
-      <returns>アカウントを確認するためにユーザーに送信できるトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="password">パスワード。</param>
+      <summary>Creates a new user account using the specified user name and password.</summary>
+      <returns>A token that can be sent to the user to confirm the account.</returns>
+      <param name="userName">The user name.</param>
+      <param name="password">The password.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.CreateAccount(System.String,System.String,System.Boolean)">
-      <summary>派生クラスでオーバーライドされた場合、指定されたユーザー名とパスワードを使用して新しいユーザー アカウントを作成します。また、新しいアカウントを使用するにはアカウントの確認を必須とすることもできます。</summary>
-      <returns>アカウントを確認するためにユーザーに送信できるトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="password">パスワード。</param>
-      <param name="requireConfirmationToken">(省略可能) アカウントの確認を必須にするには true、それ以外の場合は false。既定値は false です。</param>
+      <summary>When overridden in a derived class, creates a new user account using the specified user name and password, optionally requiring that the new account must be confirmed before the account is available for use.</summary>
+      <returns>A token that can be sent to the user to confirm the account.</returns>
+      <param name="userName">The user name.</param>
+      <param name="password">The password.</param>
+      <param name="requireConfirmationToken">(Optional) true to specify that the account must be confirmed; otherwise, false. The default is false.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.CreateOrUpdateOAuthAccount(System.String,System.String,System.String)">
-      <summary>派生クラスでオーバーライドされた場合、新しい OAuth メンバーシップ アカウントを作成するか、既存の OAuth メンバーシップ アカウントを更新します。</summary>
-      <param name="provider">OAuth または OpenID プロバイダー。</param>
-      <param name="providerUserId">OAuth または OpenID プロバイダーのユーザー ID。これはユーザー アカウントのユーザー ID ではなく、OAuth または Open ID プロバイダーのユーザー ID です。</param>
-      <param name="userName">ユーザー名。</param>
+      <summary>When overridden in a derived class, creates a new OAuth membership account, or updates an existing OAuth Membership account.</summary>
+      <param name="provider">The OAuth or OpenID provider.</param>
+      <param name="providerUserId">The OAuth or OpenID provider user ID. This is not the user ID of the user account, but the user ID on the OAuth or Open ID provider.</param>
+      <param name="userName">The user name.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.CreateUserAndAccount(System.String,System.String)">
-      <summary>新しいユーザー プロファイルおよび新しいメンバーシップ アカウントを作成します。</summary>
-      <returns>ユーザー アカウントを確認するためにユーザーに送信できるトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="password">パスワード。</param>
+      <summary>Creates a new user profile and a new membership account.</summary>
+      <returns>A token that can be sent to the user to confirm the user account.</returns>
+      <param name="userName">The user name.</param>
+      <param name="password">The password.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.CreateUserAndAccount(System.String,System.String,System.Boolean)">
-      <summary>新しいユーザー プロファイルおよび新しいメンバーシップ アカウントを作成します。</summary>
-      <returns>ユーザー アカウントを確認するためにユーザーに送信できるトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="password">パスワード。</param>
-      <param name="requireConfirmation">(省略可能) ユーザー アカウントを確認する必要があることを指定する場合は true、それ以外の場合は false。既定値は false です。</param>
+      <summary>Creates a new user profile and a new membership account.</summary>
+      <returns>A token that can be sent to the user to confirm the user account.</returns>
+      <param name="userName">The user name.</param>
+      <param name="password">The password.</param>
+      <param name="requireConfirmation">(Optional) true to specify that the user account must be confirmed; otherwise, false. The default is false.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.CreateUserAndAccount(System.String,System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
-      <summary>派生クラスでオーバーライドされた場合、新しいユーザー プロファイルと新しいメンバーシップ アカウントを作成します。</summary>
-      <returns>ユーザー アカウントを確認するためにユーザーに送信できるトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="password">パスワード。</param>
-      <param name="requireConfirmation">(省略可能) ユーザー アカウントを確認する必要があることを指定する場合は true、それ以外の場合は false。既定値は false です。</param>
-      <param name="values">(省略可能) ユーザー プロファイルに格納する追加のユーザー属性を含むディクショナリ。既定値は null です。</param>
+      <summary>When overridden in a derived class, creates a new user profile and a new membership account.</summary>
+      <returns>A token that can be sent to the user to confirm the user account.</returns>
+      <param name="userName">The user name.</param>
+      <param name="password">The password.</param>
+      <param name="requireConfirmation">(Optional) true to specify that the user account must be confirmed; otherwise, false. The default is false.</param>
+      <param name="values">(Optional) A dictionary that contains additional user attributes to store in the user profile. The default is null.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.CreateUserAndAccount(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
-      <summary>派生クラスでオーバーライドされた場合、新しいユーザー プロファイルと新しいメンバーシップ アカウントを作成します。</summary>
-      <returns>ユーザー アカウントを確認するためにユーザーに送信できるトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="password">パスワード。</param>
-      <param name="values">(省略可能) ユーザー プロファイルに格納する追加のユーザー属性を含むディクショナリ。既定値は null です。</param>
+      <summary>When overridden in a derived class, creates a new user profile and a new membership account.</summary>
+      <returns>A token that can be sent to the user to confirm the user account.</returns>
+      <param name="userName">The user name.</param>
+      <param name="password">The password.</param>
+      <param name="values">(Optional) A dictionary that contains additional user attributes to store in the user profile. The default is null.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.DeleteAccount(System.String)">
-      <summary>派生クラスでオーバーライドされた場合、指定されたメンバーシップ アカウントを削除します。</summary>
-      <returns>ユーザー アカウントが削除された場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ユーザー名。</param>
+      <summary>When overridden in a derived class, deletes the specified membership account.</summary>
+      <returns>true if the user account was deleted; otherwise, false.</returns>
+      <param name="userName">The user name.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.DeleteOAuthAccount(System.String,System.String)">
-      <summary>派生クラスでオーバーライドされた場合、指定されたプロバイダー名とプロバイダー ユーザー ID の OAuth または OpenID アカウントを削除します。</summary>
-      <param name="provider">OAuth または OpenID プロバイダーの名前。</param>
-      <param name="providerUserId">OAuth または OpenID プロバイダーのユーザー ID。これはユーザー アカウントのユーザー ID ではなく、OAuth または Open ID プロバイダーのユーザー ID です。</param>
+      <summary>When overridden in a derived class, deletes the OAuth or OpenID account with the specified provider name and provider user ID.</summary>
+      <param name="provider">The name of the OAuth or OpenID provider.</param>
+      <param name="providerUserId">The OAuth or OpenID provider user ID. This is not the user ID of the user account, but the user ID on the OAuth or Open ID provider.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.DeleteOAuthToken(System.String)"></member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.GeneratePasswordResetToken(System.String)">
-      <summary>電子メールでユーザーに送信できるパスワード リセット トークンを生成します。</summary>
-      <returns>ユーザーに送信するトークン。</returns>
-      <param name="userName">ユーザー名。</param>
+      <summary>Generates a password reset token that can be sent to a user in email.</summary>
+      <returns>A token to send to the user.</returns>
+      <param name="userName">The user name.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.GeneratePasswordResetToken(System.String,System.Int32)">
-      <summary>派生クラスでオーバーライドされた場合、電子メールでユーザーに送信できるパスワード リセット トークンを生成します。</summary>
-      <returns>ユーザーに送信するトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="tokenExpirationInMinutesFromNow">(省略可能) パスワード リセット トークンの有効期限が切れるまでの分単位の時間。既定値は 1440 (24 時間) です。</param>
+      <summary>When overridden in a derived class, generates a password reset token that can be sent to a user in email.</summary>
+      <returns>A token to send to the user.</returns>
+      <param name="userName">The user name.</param>
+      <param name="tokenExpirationInMinutesFromNow">(Optional) The time, in minutes, until the password reset token expires. The default is 1440 (24 hours).</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.GetAccountsForUser(System.String)">
-      <summary>派生クラスでオーバーライドされた場合、指定されたユーザー名に関連付けられているすべての OAuth メンバーシップ アカウントを返します。</summary>
-      <returns>指定されたユーザー名に関連付けられているすべての OAuth メンバーシップ アカウントのリスト。</returns>
-      <param name="userName">ユーザー名。</param>
+      <summary>When overridden in a derived class, returns all OAuth membership accounts associated with the specified user name.</summary>
+      <returns>A list of all OAuth membership accounts associated with the specified user name.</returns>
+      <param name="userName">The user name.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.GetCreateDate(System.String)">
-      <summary>派生クラスでオーバーライドされた場合、指定されたユーザー アカウントが作成された日時を返します。</summary>
-      <returns>アカウントが作成された日時。アカウントの作成日を使用できない場合は <see cref="F:System.DateTime.MinValue" />。</returns>
-      <param name="userName">アカウントのユーザー名。</param>
+      <summary>When overridden in a derived class, returns the date and time when the specified user account was created.</summary>
+      <returns>The date and time the account was created, or <see cref="F:System.DateTime.MinValue" /> if the account creation date is not available.</returns>
+      <param name="userName">The user name of the account.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.GetLastPasswordFailureDate(System.String)">
-      <summary>派生クラスでオーバーライドされた場合、指定されたユーザー アカウントのパスワードが最後に誤入力された日時を返します。</summary>
-      <returns>このユーザー アカウントに対して間違ったパスワードが最近入力された日時。このユーザー アカウントに対して間違ったパスワードが入力されていない場合は <see cref="F:System.DateTime.MinValue" />。</returns>
-      <param name="userName">アカウントのユーザー名。</param>
+      <summary>When overridden in a derived class, returns the date and time when an incorrect password was most recently entered for the specified user account.</summary>
+      <returns>The date and time when an incorrect password was most recently entered for this user account, or <see cref="F:System.DateTime.MinValue" /> if an incorrect password has not been entered for this user account.</returns>
+      <param name="userName">The user name of the account.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.GetOAuthTokenSecret(System.String)"></member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.GetPasswordChangedDate(System.String)">
-      <summary>派生クラスでオーバーライドされた場合、指定されたメンバーシップ アカウントのパスワードが最後に変更された日時を返します。</summary>
-      <returns>メンバーシップ アカウントのパスワードが最後に変更された日時。このユーザー アカウントのパスワードが変更されたことがない場合は <see cref="F:System.DateTime.MinValue" />。</returns>
-      <param name="userName">アカウントのユーザー名。</param>
+      <summary>When overridden in a derived class, returns the date and time when the password was most recently changed for the specified membership account.</summary>
+      <returns>The date and time when the password was more recently changed for membership account, or <see cref="F:System.DateTime.MinValue" /> if the password has never been changed for this user account.</returns>
+      <param name="userName">The user name of the account.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.GetPasswordFailuresSinceLastSuccess(System.String)">
-      <summary>派生クラスでオーバーライドされた場合、最後の正常なログイン以降、またはユーザー アカウントの作成以降に、指定されたユーザー アカウントのパスワードが誤入力された回数を返します。</summary>
-      <returns>指定されたユーザー アカウントのパスワードの試行が失敗した回数。</returns>
-      <param name="userName">アカウントのユーザー名。</param>
+      <summary>When overridden in a derived class, returns the number of times that the password for the specified user account was incorrectly entered since the most recent successful login or since the user account was created.</summary>
+      <returns>The count of failed password attempts for the specified user account.</returns>
+      <param name="userName">The user name of the account.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.GetUserIdFromOAuth(System.String,System.String)">
-      <summary>派生クラスでオーバーライドされた場合、指定された OAuth または OpenID プロバイダーのユーザー ID とプロバイダー ユーザー ID を返します。</summary>
-      <param name="provider">OAuth または OpenID プロバイダーの名前。</param>
-      <param name="providerUserId">OAuth または OpenID プロバイダーのユーザー ID。これはユーザー アカウントのユーザー ID ではなく、OAuth または Open ID プロバイダーのユーザー ID です。</param>
+      <summary>When overridden in a derived class, returns the user ID for the specified OAuth or OpenID provider and provider user ID.</summary>
+      <param name="provider">The name of the OAuth or OpenID provider.</param>
+      <param name="providerUserId">The OAuth or OpenID provider user ID. This is not the user ID of the user account, but the user ID on the OAuth or Open ID provider.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.GetUserIdFromPasswordResetToken(System.String)">
-      <summary>派生クラスでオーバーライドされた場合、パスワード リセット トークンに基づいてユーザーの ID を返します。</summary>
-      <returns>ユーザー ID。</returns>
-      <param name="token">パスワード リセット トークン。</param>
+      <summary>When overridden in a derived class, returns an ID for a user based on a password reset token.</summary>
+      <returns>The user ID.</returns>
+      <param name="token">The password reset token.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.GetUserNameFromId(System.Int32)">
-      <summary>指定されたユーザー ID と関連付けられたユーザー名を返します。</summary>
-      <returns>ユーザー名。</returns>
-      <param name="userId">名前を取得するユーザー ID。</param>
+      <summary>Returns the user name that is associated with the specified user ID.</summary>
+      <returns>The user name.</returns>
+      <param name="userId">The user ID to get the name for.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.HasLocalAccount(System.Int32)"></member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.IsConfirmed(System.String)">
-      <summary>派生クラスでオーバーライドされた場合、ユーザー アカウントがプロバイダーによって確認されているかどうかを示す値を返します。</summary>
-      <returns>ユーザーが確認された場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ユーザー名。</param>
+      <summary>When overridden in a derived class, returns a value that indicates whether the user account has been confirmed by the provider.</summary>
+      <returns>true if the user is confirmed; otherwise, false.</returns>
+      <param name="userName">The user name.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.ReplaceOAuthRequestTokenWithAccessToken(System.String,System.String,System.String)"></member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.ResetPasswordWithToken(System.String,System.String)">
-      <summary>派生クラスでオーバーライドされた場合、指定されたパスワード リセット トークンが有効であることを確認した後にパスワードをリセットします。</summary>
-      <returns>パスワードが変更された場合は true、それ以外の場合は false。</returns>
-      <param name="token">パスワード リセット トークン。</param>
-      <param name="newPassword">新しいパスワード。</param>
+      <summary>When overridden in a derived class, resets a password after verifying that the specified password reset token is valid.</summary>
+      <returns>true if the password was changed; otherwise, false.</returns>
+      <param name="token">A password reset token.</param>
+      <param name="newPassword">The new password.</param>
     </member>
     <member name="M:WebMatrix.WebData.ExtendedMembershipProvider.StoreOAuthRequestToken(System.String,System.String)"></member>
     <member name="T:WebMatrix.WebData.FormsAuthenticationSettings">
-      <summary>Web.config ファイルの &lt;appSettings&gt; セクションの既定設定をオーバーライドするキー名を定義します。</summary>
+      <summary>Defines key names that override default settings in the &lt;appSettings&gt; section of the Web.config file.</summary>
     </member>
     <member name="F:WebMatrix.WebData.FormsAuthenticationSettings.DefaultLoginUrl">
-      <summary>既定のログイン URL にアクセスするキー。</summary>
+      <summary>The key to access the default login URL.</summary>
     </member>
     <member name="F:WebMatrix.WebData.FormsAuthenticationSettings.LoginUrlKey">
-      <summary>ログイン URL キーにアクセスするキー。</summary>
+      <summary>The key to access the login URL key.</summary>
     </member>
     <member name="F:WebMatrix.WebData.FormsAuthenticationSettings.PreserveLoginUrlKey">
-      <summary>"logon" でオーバーライドする代わりに、"login" という用語を維持する設定にアクセスするキー。</summary>
+      <summary>The key to access the setting that preserves the term "login" instead of overriding it with "logon".</summary>
     </member>
     <member name="T:WebMatrix.WebData.OAuthAccountData">
-      <summary>OAuth または OpenID アカウントを表します。</summary>
+      <summary>Represents an OAuth or OpenID account.</summary>
     </member>
     <member name="M:WebMatrix.WebData.OAuthAccountData.#ctor(System.String,System.String)">
-      <summary>指定された OAuth または Open ID プロバイダーおよびプロバイダー ユーザー ID を使用して、<see cref="T:WebMatrix.WebData.OAuthAccountData" /> クラスの新しいインスタンスを初期化します。</summary>
-      <param name="provider">プロバイダー。</param>
-      <param name="providerUserId">プロバイダー ユーザー ID。</param>
+      <summary>Initializes a new instance of the <see cref="T:WebMatrix.WebData.OAuthAccountData" /> class by using the specified OAuth or Open ID provider and provider user ID.</summary>
+      <param name="provider">The provider.</param>
+      <param name="providerUserId">The provider user id.</param>
     </member>
     <member name="P:WebMatrix.WebData.OAuthAccountData.Provider">
-      <summary>OAuth または Open ID プロバイダー名を取得します。</summary>
-      <returns>プロバイダー名。</returns>
+      <summary>Gets the OAuth or Open ID provider name.</summary>
+      <returns>The provider name.</returns>
     </member>
     <member name="P:WebMatrix.WebData.OAuthAccountData.ProviderUserId">
-      <summary>OAuth または Open ID プロバイダー ユーザー ID を取得します。</summary>
-      <returns>プロバイダー ユーザー ID。</returns>
+      <summary>Gets the OAuth or Open ID provider user ID.</summary>
+      <returns>The provider user ID.</returns>
     </member>
     <member name="T:WebMatrix.WebData.PreApplicationStartCode">
-      <summary>簡易なメンバーシップ アプリケーション開始前のスタート コードの登録ポイントを提供します。</summary>
+      <summary>Provides a registration point for the simple membership pre-application start code.</summary>
     </member>
     <member name="M:WebMatrix.WebData.PreApplicationStartCode.Start">
-      <summary>簡易なメンバーシップ アプリケーション開始前のスタート コードを登録します。</summary>
+      <summary>Registers the simple membership pre-application start code.</summary>
     </member>
     <member name="T:WebMatrix.WebData.SimpleMembershipProvider">
-      <summary>アカウントの作成、削除、パスワードの管理など、Web サイト メンバーシップ タスクのサポートを提供します。</summary>
+      <summary>Provides support for website membership tasks, such as creating accounts, deleting accounts, and managing passwords.</summary>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.#ctor">
-      <summary>
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+      <summary>Initializes a new instance of the <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class.</summary>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.#ctor(System.Web.Security.MembershipProvider)">
-      <summary>指定されたメンバーシップ プロバイダーを使用して、<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスの新しいインスタンスを初期化します。</summary>
-      <param name="previousProvider">使用するメンバーシップ プロバイダー。</param>
+      <summary>Initializes a new instance of the <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class by using the specified membership provider.</summary>
+      <param name="previousProvider">The membership provider to use.</param>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.ApplicationName">
-      <summary>アプリケーションの名前を取得または設定します。</summary>
-      <returns>アプリケーションの名前。</returns>
+      <summary>Gets or sets the name of the application.</summary>
+      <returns>The name of the application.</returns>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.ChangePassword(System.String,System.String,System.String)">
-      <summary>指定されたメンバーシップ アカウントのパスワードを変更します。</summary>
-      <returns>パスワードが正常に変更された場合は true、それ以外の場合は false。</returns>
-      <param name="username">ユーザー名。</param>
-      <param name="oldPassword">古いパスワード。</param>
-      <param name="newPassword">新しいパスワード。</param>
+      <summary>Changes the password for the specified membership account.</summary>
+      <returns>true if the password is successfully changed; otherwise, false.</returns>
+      <param name="username">The user name.</param>
+      <param name="oldPassword">The old password.</param>
+      <param name="newPassword">The new password.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)">
-      <summary>指定されたアカウントのパスワードの質問と回答を変更します。</summary>
-      <returns>パスワードの質問と回答が正常に変更された場合は true、それ以外の場合は false。</returns>
-      <param name="username">ユーザー名。</param>
-      <param name="password">新しいパスワード。</param>
-      <param name="newPasswordQuestion">ユーザーがパスワードを変更するときに答える必要があるセキュリティの質問。</param>
-      <param name="newPasswordAnswer">セキュリティの質問の回答。</param>
+      <summary>Changes the password question and answer for the specified account.</summary>
+      <returns>true if the password question and answer are successfully changed; otherwise, false.</returns>
+      <param name="username">The user name.</param>
+      <param name="password">The new password.</param>
+      <param name="newPasswordQuestion">The security question that the user must answer in order to change the password.</param>
+      <param name="newPasswordAnswer">The answer to the security question.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.ConfirmAccount(System.String)">
-      <summary>保留中のメンバーシップ アカウントを有効化します。</summary>
-      <returns>ユーザー アカウントが確認された場合は true、それ以外の場合は false。</returns>
-      <param name="accountConfirmationToken">認証プロバイダーに渡す確認トークン。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
+      <summary>Activates a pending membership account.</summary>
+      <returns>true if the user account is confirmed; otherwise, false.</returns>
+      <param name="accountConfirmationToken">A confirmation token to pass to the authentication provider.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.ConfirmAccount(System.String,System.String)">
-      <returns>
-        <see cref="T:System.Boolean" /> を返します。</returns>
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.CreateAccount(System.String,System.String,System.Boolean)">
-      <summary>指定されたユーザー名とパスワードを使用して新しいユーザー アカウントを作成します。</summary>
-      <returns>ユーザー アカウントを確認するためにユーザーに送信できるトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="password">パスワード。</param>
-      <param name="requireConfirmationToken">(省略可能) ユーザー アカウントを確認する必要があることを指定する場合は true、それ以外の場合は false。既定値は false です。</param>
+      <summary>Creates a new user account by using the specified user name and password.</summary>
+      <returns>A token that can be sent to the user to confirm the user account.</returns>
+      <param name="userName">The user name.</param>
+      <param name="password">The password.</param>
+      <param name="requireConfirmationToken">(Optional) true to specify that the user account must be confirmed; otherwise, false. The default is false.</param>
       <exception cref="T:System.Web.Security.MembershipCreateUserException">
-        <paramref name="username" /> が空です。または<paramref name="username" /> には既にユーザー アカウントがあります。または<paramref name="password" /> が空です。または<paramref name="password" /> が 128 文字を超えています。または<paramref name="username" /> に対応するユーザー レコードが <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.UserTableName" /> テーブル (ユーザー プロファイル テーブル) に存在しません。またはデータベース操作に失敗しました。</exception>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
+        <paramref name="username" /> is empty.-or-<paramref name="username" /> already has a user account.-or-<paramref name="password" /> is empty.-or-<paramref name="password" /> is longer than 128 characters.-or-A user record that corresponds to <paramref name="username" /> does not exist in the <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.UserTableName" /> table (the user profile table).-or-The database operation failed.</exception>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.CreateOrUpdateOAuthAccount(System.String,System.String,System.String)">
-      <summary>新しい OAuth メンバーシップ アカウントを作成、または既存の OAuth メンバーシップ アカウントを更新します。</summary>
-      <param name="provider">OAuth または OpenID プロバイダー。</param>
-      <param name="providerUserId">OAuth または OpenID プロバイダーのユーザー ID。これはユーザー アカウントのユーザー ID ではなく、OAuth または Open ID プロバイダーのユーザー ID です。</param>
-      <param name="userName">ユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
+      <summary>Creates a new OAuth membership account, or updates an existing OAuth Membership account.</summary>
+      <param name="provider">The OAuth or OpenID provider.</param>
+      <param name="providerUserId">The OAuth or OpenID provider user ID. This is not the user ID of the user account, but the user ID on the OAuth or Open ID provider.</param>
+      <param name="userName">The user name.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
       <exception cref="T:System.Web.Security.MembershipCreateUserException">
-        <paramref name="username" /> が空です。または<paramref name="username" /> に対応するユーザー レコードが <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.UserTableName" /> テーブル (ユーザー プロファイル テーブル) に存在しません。またはデータベース操作に失敗しました。</exception>
+        <paramref name="username" /> is empty.-or-A user record that corresponds to <paramref name="username" /> does not exist in the <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.UserTableName" /> table (the user profile table).-or-The database operation failed.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)">
-      <summary>指定されたユーザーをメンバーシップ データベースに追加します。</summary>
-      <returns>新しく作成されたユーザー アカウントの情報が設定された <see cref="T:System.Web.Security.MembershipUser" /> オブジェクト。</returns>
-      <param name="username">新しいユーザー アカウントのユーザー名。</param>
-      <param name="password">新しいユーザー アカウントのパスワード。</param>
-      <param name="email">新しいユーザー アカウントの電子メール アドレス。</param>
-      <param name="passwordQuestion">新しいユーザー アカウントのセキュリティの質問。</param>
-      <param name="passwordAnswer">新しいユーザー アカウントのセキュリティの質問に対する回答。</param>
-      <param name="isApproved">検証対象のユーザー アカウントが承認されたことを示す場合は true、それ以外の場合は false。</param>
-      <param name="providerUserKey">ユーザー アカウントのメンバーシップ データ ソースの一意の識別子。</param>
-      <param name="status">このメソッドが戻るときに、ユーザー アカウントが正常に作成されたかどうかを示す <see cref="T:System.Web.Security.MembershipCreateStatus" /> 列挙値が格納されます。このパラメーターは開始せずに渡されます。</param>
+      <summary>Adds the specified user to the membership database.</summary>
+      <returns>A <see cref="T:System.Web.Security.MembershipUser" /> object that is populated with the information for the newly created user account.</returns>
+      <param name="username">The user name for the new user account.</param>
+      <param name="password">The password for the new user account.</param>
+      <param name="email">The email address for the new user account.</param>
+      <param name="passwordQuestion">The security question for the new user account.</param>
+      <param name="passwordAnswer">The answer to the security question for the new user account.</param>
+      <param name="isApproved">true to indicate that the user account is approved to be validated; otherwise, false.</param>
+      <param name="providerUserKey">The unique identifier from the membership data source for the user account.</param>
+      <param name="status">When this method returns, contains a <see cref="T:System.Web.Security.MembershipCreateStatus" /> enumeration value that indicates whether the user account was created successfully. This parameter is passed uninitiated.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.CreateUserAndAccount(System.String,System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
-      <summary>新しいユーザー プロファイルおよび新しいメンバーシップ アカウントを作成します。</summary>
-      <returns>ユーザー アカウントを確認するためにユーザーに送信できるトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="password">パスワード。</param>
-      <param name="requireConfirmation">(省略可能) <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.ConfirmAccount(System.String)" /> メソッドを使用してユーザー アカウントを確認する必要があるように指定する場合は true、それ以外の場合は false。既定値は false です。</param>
-      <param name="values">(省略可能) 新しいユーザー プロファイルの既定値としてデータ ストアに追加できる追加のキー/値ペア属性が含まれるディクショナリ。各エントリのキーはデータベース列で、各エントリの値は列の値です。既定値は null です。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
-      <exception cref="T:System.Web.Security.MembershipCreateUserException">このユーザー名のメンバーシップ アカウントはメンバーシップ データベースに既に存在します。</exception>
+      <summary>Creates a new user profile and a new membership account.</summary>
+      <returns>A token that can be sent to the user to confirm the user account.</returns>
+      <param name="userName">The user name.</param>
+      <param name="password">The password.</param>
+      <param name="requireConfirmation">(Optional) true to specify that the user account must be confirmed by using the <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.ConfirmAccount(System.String)" /> method; otherwise, false. The default is false. </param>
+      <param name="values">(Optional) A dictionary that contains additional key/value pair attributes that you can add to the data store as default values for new user profile. The key for each entry is the database column, and the value of each entry is the value for the column. The default is null.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
+      <exception cref="T:System.Web.Security.MembershipCreateUserException">A membership account for this user name already exists in the membership database.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.DeleteAccount(System.String)">
-      <summary>指定されたメンバーシップ アカウントを削除します。</summary>
-      <returns>ユーザー アカウントが削除された場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ユーザー名。</param>
+      <summary>Deletes the specified membership account.</summary>
+      <returns>true if the user account was deleted; otherwise, false.</returns>
+      <param name="userName">The user name.</param>
       <exception cref="T:System.ArgumentException">
-        <paramref name="username" /> が null または空です。</exception>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
+        <paramref name="username" /> is null or empty.</exception>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.DeleteOAuthAccount(System.String,System.String)">
-      <summary>指定されたプロバイダー名およびプロバイダー ユーザー ID の OAuth または OpenID アカウントを削除します。</summary>
-      <param name="provider">OAuth または OpenID プロバイダーの名前。</param>
-      <param name="providerUserId">OAuth または OpenID プロバイダーのユーザー ID。これはユーザー アカウントのユーザー ID ではなく、OAuth または Open ID プロバイダーのユーザー ID です。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
+      <summary>Deletes the OAuth or OpenID account with the specified provider name and provider user ID.</summary>
+      <param name="provider">The name of the OAuth or OpenID provider.</param>
+      <param name="providerUserId">The OAuth or OpenID provider user ID. This is not the user ID of the user account, but the user ID on the OAuth or Open ID provider.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
       <exception cref="T:System.Web.Security.MembershipCreateUserException">
-        <paramref name="username" /> が空です。または<paramref name="username" /> に対応するユーザー レコードが <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.UserTableName" /> テーブル (ユーザー プロファイル テーブル) に存在しません。またはデータベース操作に失敗しました。</exception>
+        <paramref name="username" /> is empty.-or-A user record that corresponds to <paramref name="username" /> does not exist in the <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.UserTableName" /> table (the user profile table).-or-The database operation failed.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.DeleteOAuthToken(System.String)"></member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.DeleteUser(System.String,System.Boolean)">
-      <summary>指定されたユーザー アカウントを削除します。また、オプションでユーザー アカウントに関連するすべてのプロファイル データを削除します。</summary>
-      <returns>ユーザー アカウントが削除された場合は true、それ以外の場合は false。</returns>
-      <param name="username">ユーザー名。</param>
-      <param name="deleteAllRelatedData">ユーザーに関連するプロファイル データを削除する場合は true、ユーザーに関連するデータを保持する場合は false。</param>
+      <summary>Deletes the specified user account, and optionally deletes all profile data that is related to that user account.</summary>
+      <returns>true if the user account was deleted; otherwise, false.</returns>
+      <param name="username">The user name.</param>
+      <param name="deleteAllRelatedData">true to delete profile data that is related to the user, or false to retain data that is related to the user.</param>
       <exception cref="T:System.ArgumentException">
-        <paramref name="username" /> が null または空です。</exception>
+        <paramref name="username" /> is null or empty.</exception>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.EnablePasswordReset">
-      <summary>ユーザーがパスワードをリセットすることをメンバーシップ プロバイダーが許可しているかどうかを示す値を取得します。</summary>
-      <returns>メンバーシップ プロバイダーがパスワードのリセットをサポートしている場合は true、それ以外の場合は false。既定値は true です。</returns>
+      <summary>Gets a value that indicates whether the membership provider lets users reset their passwords.</summary>
+      <returns>true if the membership provider supports password reset; otherwise, false. The default is true.</returns>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.EnablePasswordRetrieval">
-      <summary>ユーザーがパスワードを取得することをメンバーシップ プロバイダーが許可しているかどうかを示す値を取得します。</summary>
-      <returns>メンバーシップ プロバイダーがパスワードの取得をサポートしている場合は true、それ以外の場合は false。既定値は false です。</returns>
+      <summary>Gets a value that indicates whether the membership provider lets users retrieve their passwords.</summary>
+      <returns>true if the membership provider supports password retrieval; otherwise, false. The default is false.</returns>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.FindUsersByEmail(System.String,System.Int32,System.Int32,System.Int32@)">
-      <summary>指定された電子メール アドレスと一致する電子メール アドレスを持つすべてのユーザー アカウントを返します。</summary>
-      <returns>
-        <paramref name="pageIndex" /> で指定されたページから始まる <paramref name="pageSize" /> ユーザー アカウントのページを含むコレクション。</returns>
-      <param name="emailToMatch">検索対象の電子メール アドレス。</param>
-      <param name="pageIndex">返される結果ページの 0 から始まるインデックス。</param>
-      <param name="pageSize">返される結果ページのサイズ。</param>
-      <param name="totalRecords">このメソッドが戻るときに、一致したユーザー アカウントの合計数が含まれます。</param>
+      <summary>Returns all of the user accounts whose email address matches the specified email address.</summary>
+      <returns>A collection that contains a page of <paramref name="pageSize" /> user accounts starting at the page specified by <paramref name="pageIndex" />.</returns>
+      <param name="emailToMatch">The email address to search for.</param>
+      <param name="pageIndex">The zero-based index of the page of results to return.</param>
+      <param name="pageSize">The size of the page of results to return.</param>
+      <param name="totalRecords">When this method returns, contains the total number of matched user accounts.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)">
-      <summary>指定されたユーザー名と一致する名前のすべてのユーザー アカウントを返します。</summary>
-      <returns>
-        <paramref name="pageIndex" /> で指定されたページから始まる <paramref name="pageSize" /> ユーザー アカウントのページを含むコレクション。</returns>
-      <param name="usernameToMatch">検索するユーザー名。</param>
-      <param name="pageIndex">返される結果ページの 0 から始まるインデックス。</param>
-      <param name="pageSize">返される結果ページのサイズ。</param>
-      <param name="totalRecords">このメソッドが戻るときに、一致したユーザーの総数が格納されます。</param>
+      <summary>Returns all of the user accounts whose name matches the specified user name.</summary>
+      <returns>A collection that contains a page of <paramref name="pageSize" /> user accounts starting at the page specified by <paramref name="pageIndex" />.</returns>
+      <param name="usernameToMatch">The user name to search for.</param>
+      <param name="pageIndex">The zero-based index of the page of results to return.</param>
+      <param name="pageSize">The size of the page of results to return.</param>
+      <param name="totalRecords">When this method returns, contains the total number of matched users.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GeneratePasswordResetToken(System.String,System.Int32)">
-      <summary>電子メールでユーザーに送信できるパスワード リセット トークンを生成します。</summary>
-      <returns>ユーザーに送信するトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="tokenExpirationInMinutesFromNow">(省略可能) パスワード リセット トークンの有効期限が切れるまでの分単位の時間。既定値は 1440 (24 時間) です。</param>
+      <summary>Generates a password reset token that can be sent to a user in email.</summary>
+      <returns>A token to send to the user.</returns>
+      <param name="userName">The user name.</param>
+      <param name="tokenExpirationInMinutesFromNow">(Optional) The time, in minutes, until the password reset token expires. The default is 1440 (24 hours).</param>
       <exception cref="T:System.ArgumentException">
-        <paramref name="username" /> が空です。</exception>
-      <exception cref="T:System.Configuration.Provider.ProviderException">データベース操作に失敗しました。</exception>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
+        <paramref name="username" /> is empty.</exception>
+      <exception cref="T:System.Configuration.Provider.ProviderException">The database operation failed.</exception>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetAccountsForUser(System.String)">
-      <summary>指定されたユーザー名に関連付けられている OAuth メンバーシップ アカウントを返します。</summary>
-      <returns>指定されたユーザー名に関連付けられているすべての OAuth メンバーシップ アカウントのリスト。</returns>
-      <param name="userName">ユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
+      <summary>Returns all OAuth membership accounts that are associated with the specified user name.</summary>
+      <returns>A list of all OAuth membership accounts that are associated with the specified user name.</returns>
+      <param name="userName">The user name.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetAllUsers(System.Int32,System.Int32,System.Int32@)">
-      <summary>データ ソースのすべてのユーザー アカウントを返します。</summary>
-      <returns>
-        <paramref name="pageIndex" /> で指定されたページから始まる <paramref name="pageSize" /> ユーザー アカウントのページを含むコレクション。</returns>
-      <param name="pageIndex">返される結果ページの 0 から始まるインデックス。</param>
-      <param name="pageSize">返される結果ページのサイズ。</param>
-      <param name="totalRecords">このメソッドが戻るときに、一致したユーザー アカウントの合計数が含まれます。</param>
+      <summary>Returns all of the user accounts in the data source.</summary>
+      <returns>A collection that contains a page of <paramref name="pageSize" /> user accounts starting at the page specified by <paramref name="pageIndex" />.</returns>
+      <param name="pageIndex">The zero-based index of the page of results to return.</param>
+      <param name="pageSize">The size of the page of results to return.</param>
+      <param name="totalRecords">When this method returns, contains the total number of matched user accounts.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetCreateDate(System.String)">
-      <summary>指定されたユーザー アカウントが作成された日付と時刻を返します。</summary>
-      <returns>ユーザー アカウントが作成された日付と時刻。ユーザー アカウントの作成日が使用できない場合は <see cref="F:System.DateTime.MinValue" />。</returns>
-      <param name="userName">アカウントのユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <paramref name="userName" /> で指定されたユーザーにユーザー アカウントがありません。</exception>
+      <summary>Returns the date and time when the specified user account was created.</summary>
+      <returns>The date and time on which the user account was created, or <see cref="F:System.DateTime.MinValue" /> if the user account creation date is not available.</returns>
+      <param name="userName">The user name of the account.</param>
+      <exception cref="T:System.InvalidOperationException">The user specified by <paramref name="userName" /> does not have a user account.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetLastPasswordFailureDate(System.String)">
-      <summary>指定されたユーザー アカウントのパスワードが最後に誤入力された日時を返します。</summary>
-      <returns>このユーザー アカウントに対して間違ったパスワードが最近入力された日時。このユーザー アカウントに対して間違ったパスワードが入力されていない場合は <see cref="F:System.DateTime.MinValue" />。</returns>
-      <param name="userName">アカウントのユーザー名。</param>
+      <summary>Returns the date and time when an incorrect password was most recently entered for the specified user account.</summary>
+      <returns>The date and time when an incorrect password was most recently entered for this user account, or <see cref="F:System.DateTime.MinValue" /> if an incorrect password has not been entered for this user account.</returns>
+      <param name="userName">The user name of the account.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetNumberOfUsersOnline">
-      <summary>現在アプリケーションにアクセスしているユーザーの数を返します。</summary>
-      <returns>現在アプリケーションにアクセスしているユーザーの数。</returns>
+      <summary>Returns the number of users who are currently accessing the application.</summary>
+      <returns>The number of users who are currently accessing the application.</returns>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetOAuthTokenSecret(System.String)"></member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetPassword(System.String,System.String)">
-      <summary>データ ソースの指定されたユーザー アカウントのパスワードを返します。</summary>
-      <returns>指定されたユーザー アカウントのパスワード。</returns>
-      <param name="username">パスワードを取得する対象のユーザー。</param>
-      <param name="answer">パスワードのセキュリティの質問に対する回答。</param>
+      <summary>Returns the password for the specified user account from the data source.</summary>
+      <returns>The password for the specified user account.</returns>
+      <param name="username">The user to retrieve the password for.</param>
+      <param name="answer">The answer for the password security question.</param>
       <exception cref="T:System.NotSupportedException">
-        <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.EnablePasswordRetrieval" /> が false です。</exception>
+        <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.EnablePasswordRetrieval" /> is false.</exception>
       <exception cref="T:System.Web.Security.MembershipPasswordException">
-        <paramref name="answer" /> がユーザー アカウントのセキュリティの回答と一致せず、<see cref="P:WebMatrix.WebData.SimpleMembershipProvider.RequiresQuestionAndAnswer" /> は true です。</exception>
+        <paramref name="answer" /> does not match the security answer for the user account and <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.RequiresQuestionAndAnswer" /> is true.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetPasswordChangedDate(System.String)">
-      <summary>指定されたメンバーシップ アカウントに対してパスワードが最近変更された日時を返します。</summary>
-      <returns>このアカウントのパスワードが最後に変更された日時。このメンバーシップ アカウントのパスワードが変更されたことがない場合は <see cref="F:System.DateTime.MinValue" />。</returns>
-      <param name="userName">アカウントのユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <paramref name="userName" /> で指定されたユーザーにメンバーシップ アカウントがありません。</exception>
+      <summary>Returns the date and time when the password was most recently changed for the specified membership account.</summary>
+      <returns>The date and time when the password was more recently changed for this account, or <see cref="F:System.DateTime.MinValue" /> if the password has never been changed for this membership account.</returns>
+      <param name="userName">The user name of the account.</param>
+      <exception cref="T:System.InvalidOperationException">The user specified by <paramref name="userName" /> does not have a membership account.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetPasswordFailuresSinceLastSuccess(System.String)">
-      <summary>最後の正常なログイン以降、またはユーザー アカウントの作成以降に、指定されたユーザー アカウントのパスワードが誤入力された回数を返します。</summary>
-      <returns>指定されたユーザー アカウントのパスワードが誤入力された回数。<paramref name="userName" /> で指定されたユーザーにユーザー アカウントがない場合は -1。</returns>
-      <param name="userName">アカウントのユーザー名。</param>
+      <summary>Returns the number of times that the password for the specified user account was incorrectly entered since the most recent successful login or since the user account was created.</summary>
+      <returns>The count of failed password attempts for the specified user account, or -1 if the user specified by <paramref name="userName" /> does not have a user account.</returns>
+      <param name="userName">The user name of the account.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetUser(System.Object,System.Boolean)">
-      <summary>指定されたユーザー ID を使用してユーザー アカウントの情報を返します。また、オプションでユーザー アカウントの最新のアクティビティのタイムスタンプを更新します。</summary>
-      <returns>ユーザー アカウント情報で設定されるオブジェクト。<paramref name="providerUserKey" /> が見つからない場合は null。</returns>
-      <param name="providerUserKey">情報を取得する対象のユーザー アカウントの ID。ID は <see cref="T:System.Int32" /> 値で、<see cref="T:System.Object" /> インスタンスとして格納されています。</param>
-      <param name="userIsOnline">ユーザー アカウントの最新のアクティビティのタイムスタンプを更新する場合は true、タイムスタンプを更新せずにユーザー アカウント情報を返す場合は false。</param>
+      <summary>Returns information about the user account using the specified user ID, and optionally updates the timestamp of the most recent activity for the user account.</summary>
+      <returns>An object that is populated with the user account information, or null if <paramref name="providerUserKey" /> is not found.</returns>
+      <param name="providerUserKey">The ID for the user account to get information for. The ID is a <see cref="T:System.Int32" /> value that is stored as an <see cref="T:System.Object" /> instance.</param>
+      <param name="userIsOnline">true to update the last-activity timestamp for the user account, or false to return user account information without updating the timestamp.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetUser(System.String,System.Boolean)">
-      <summary>指定されたユーザー名を使用してユーザー アカウントの情報を返します。また、オプションでユーザー アカウントの最新のアクティビティのタイムスタンプを更新します。</summary>
-      <returns>ユーザー アカウント情報で設定されるオブジェクト。<paramref name="username" /> が見つからない場合は null。</returns>
-      <param name="username">情報を取得する対象のユーザーの名前。</param>
-      <param name="userIsOnline">ユーザー アカウントの最新のアクティビティのタイムスタンプを更新する場合は true、タイムスタンプを更新せずにユーザー アカウント情報を返す場合は false。</param>
+      <summary>Returns information about the user account using the specified user name, and optionally updates the timestamp of the most recent activity for the user account.</summary>
+      <returns>An object that is populated with the user account information, or null if <paramref name="username" /> is not found.</returns>
+      <param name="username">The name of the user to get information for.</param>
+      <param name="userIsOnline">true to update the last-activity timestamp for the user account, or false to return user account information without updating the timestamp.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetUserId(System.String)">
-      <summary>指定されたユーザー名に基づいてユーザーの ID を返します。</summary>
-      <returns>ユーザー ID。</returns>
-      <param name="userName">ユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
+      <summary>Returns the ID for a user based on the specified user name.</summary>
+      <returns>The user ID.</returns>
+      <param name="userName">The user name.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetUserIdFromOAuth(System.String,System.String)">
-      <summary>指定された OAuth または OpenID プロバイダーのユーザー ID およびプロバイダー ユーザー ID を返します。</summary>
-      <returns>ユーザー ID。OAuth または Open ID プロバイダーのユーザー ID に関連付けられたユーザー ID がない場合は -1。</returns>
-      <param name="provider">OAuth または OpenID プロバイダーの名前。</param>
-      <param name="providerUserId">OAuth または OpenID プロバイダーのユーザー ID。これはユーザー アカウントのユーザー ID ではなく、OAuth または Open ID プロバイダーのユーザー ID です。</param>
+      <summary>Returns the user ID for the specified OAuth or OpenID provider and provider user ID.</summary>
+      <returns>The user ID, or -1 if there is no user ID associated with the OAuth or Open ID provider user ID.</returns>
+      <param name="provider">The name of the OAuth or OpenID provider.</param>
+      <param name="providerUserId">The OAuth or OpenID provider user ID. This is not the user ID of the user account, but the user ID on the OAuth or Open ID provider.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetUserIdFromPasswordResetToken(System.String)">
-      <summary>パスワード リセット トークンに基づいてユーザーの ID を返します。</summary>
-      <returns>ユーザー ID。指定されたパスワード リセット トークンに関連付けられているユーザー ID がない場合は -1。</returns>
-      <param name="token">パスワード リセット トークン。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
+      <summary>Returns the ID for a user based on a password reset token.</summary>
+      <returns>The user ID, or -1 if there is no user ID associated with the specified password reset token.</returns>
+      <param name="token">The password reset token.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetUserNameByEmail(System.String)">
-      <summary>指定された電子メール アドレスに関連付けられているユーザー名を返します。</summary>
-      <returns>指定された電子メール アドレスに関連付けられているユーザー名。一致が見つからない場合は null。</returns>
-      <param name="email">検索対象の電子メール アドレス。</param>
+      <summary>Returns the user name that is associated with the specified email address.</summary>
+      <returns>The user name that is associated with the specified email address, or null if no match is found.</returns>
+      <param name="email">The email address to search for.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.GetUserNameFromId(System.Int32)">
-      <summary>指定されたユーザー ID と関連付けられたユーザー名を返します。</summary>
-      <returns>ユーザー名。</returns>
-      <param name="userId">名前を取得するユーザー ID。</param>
+      <summary>Returns the user name that is associated with the specified user ID.</summary>
+      <returns>The user name.</returns>
+      <param name="userId">The user ID to get the name for.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.HasLocalAccount(System.Int32)"></member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
-      <summary>プロバイダーを初期化します。</summary>
-      <param name="name">プロバイダーのフレンドリ名。</param>
-      <param name="config">プロバイダー固有の属性を表す名前/値ペアのコレクション。</param>
+      <summary>Initializes the provider.</summary>
+      <param name="name">The friendly name of the provider.</param>
+      <param name="config">A collection of name/value pairs that represent provider-specific attributes.</param>
       <exception cref="T:System.ArgumentNullException">
-        <paramref name="config" /> が null です。</exception>
+        <paramref name="config" /> is null.</exception>
       <exception cref="T:System.Configuration.Provider.ProviderException">
-        <paramref name="config" /> に認識できない属性が含まれます。</exception>
+        <paramref name="config" /> contains an unrecognized attribute.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.IsConfirmed(System.String)">
-      <summary>ユーザー アカウントがプロバイダーによって確認されたかどうかを示す値を返します。</summary>
-      <returns>ユーザー アカウントが確認された場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ユーザー名。</param>
+      <summary>Returns a value that indicates whether the user account has been confirmed by the provider.</summary>
+      <returns>true if the user account has been confirmed; otherwise, false.</returns>
+      <param name="userName">The user name.</param>
       <exception cref="T:System.ArgumentException">
-        <paramref name="userName" /> が null または空です。</exception>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
+        <paramref name="userName" /> is null or empty.</exception>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.MaxInvalidPasswordAttempts">
-      <summary>パスワードまたはパスワードの回答を間違えることができる回数を取得します。この回数だけ間違えると、メンバーシップ ユーザーはロックアウトされます。</summary>
-      <returns>パスワードまたはパスワードの回答を間違えることができる回数。この回数だけ間違えると、メンバーシップ ユーザーはロックアウトされます。</returns>
+      <summary>Gets the number of invalid password or password-answer attempts that are allowed before the membership user is locked out.</summary>
+      <returns>The number of invalid password or password-answer attempts that are allowed before the membership user is locked out.</returns>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.MinRequiredNonAlphanumericCharacters">
-      <summary>パスワードに含める必要がある特殊 (アルファベット以外の) 文字の最小文字数を取得します。</summary>
-      <returns>パスワードに含める必要がある特殊文字の最小文字数。</returns>
+      <summary>Gets the minimum number of special (non-alphanumeric) characters that a password must contain.</summary>
+      <returns>The minimum number of special characters that a password must contain.</returns>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.MinRequiredPasswordLength">
-      <summary>パスワードの最小長を取得します。</summary>
-      <returns>パスワードの最小長。</returns>
+      <summary>Gets the minimum length that is required for a password.</summary>
+      <returns>The minimum length that is required for a password.</returns>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.PasswordAttemptWindow">
-      <summary>誤ったパスワードまたはセキュリティの質問に対する回答を入力できる分数を取得します。このｋ時間が経過すると、メンバーシップ ユーザーはロックアウトされます。</summary>
-      <returns>分数。</returns>
+      <summary>Gets the number of minutes during which the maximum number of invalid password or security-question answer attempts are allowed before the user account is locked out.</summary>
+      <returns>The number of minutes.</returns>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.PasswordFormat">
-      <summary>パスワードを格納する形式を示す値を取得します。</summary>
-      <returns>形式を示す列挙値のいずれか。</returns>
+      <summary>Gets a value that indicates the format for storing passwords.</summary>
+      <returns>One of the enumeration values that indicates the format.</returns>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.PasswordStrengthRegularExpression">
-      <summary>パスワードの複雑さを評価する際に使用する正規表現を取得します。</summary>
-      <returns>パスワードの複雑さを評価する際に使用する正規表現。</returns>
+      <summary>Gets the regular expression that is used to evaluate password complexity.</summary>
+      <returns>The regular expression that is used to evaluate password complexity.</returns>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.ReplaceOAuthRequestTokenWithAccessToken(System.String,System.String,System.String)"></member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.RequiresQuestionAndAnswer">
-      <summary>パスワードをリセットおよび取得するときにユーザーがセキュリティの質問に答えることをメンバーシップ プロバイダーが要求しているかどうかを示す値を取得します。</summary>
-      <returns>セキュリティの質問に対する回答が必要な場合は true、それ以外の場合は false。既定値は true です。</returns>
+      <summary>Gets a value that indicates whether the membership provider requires that the user answer a security question for password reset and retrieval.</summary>
+      <returns>true if a security-question answer is required; otherwise, false. The default is true.</returns>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.RequiresUniqueEmail">
-      <summary>メンバーシップ プロバイダーがユーザー名ごとに一意の電子メール アドレスユーザーを要求しているかどうかを示す値を取得します。</summary>
-      <returns>メンバーシップ プロバイダーが一意の電子メール アドレスを要求している場合は true、それ以外の場合は false。既定値は true です。</returns>
+      <summary>Gets a value that indicates whether the membership provider requires a unique email address for each user name.</summary>
+      <returns>true if the membership provider requires a unique email address; otherwise, false. The default is true.</returns>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.ResetPassword(System.String,System.String)">
-      <summary>ユーザー アカウントのパスワードを、自動生成された新しいパスワードにリセットします。</summary>
-      <returns>指定されたユーザー アカウントの新しいパスワード。</returns>
-      <param name="username">パスワードをリセットするユーザー アカウント。</param>
-      <param name="answer">新しいユーザーのセキュリティの質問に対する回答。</param>
+      <summary>Resets the password for a user account to a new, automatically generated password.</summary>
+      <returns>The new password for the specified user account.</returns>
+      <param name="username">The user account to reset the password for.</param>
+      <param name="answer">The answer to the security question for the new user.</param>
       <exception cref="T:System.NotSupportedException">
-        <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.EnablePasswordReset" /> が false です。</exception>
+        <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.EnablePasswordReset" /> is false.</exception>
       <exception cref="T:System.Web.Security.MembershipPasswordException">
-        <paramref name="answer" /> がメンバーシップ テーブルのユーザー アカウントのセキュリティの回答と一致せず、<see cref="P:WebMatrix.WebData.SimpleMembershipProvider.RequiresQuestionAndAnswer" /> は true です。</exception>
+        <paramref name="answer" /> does not match the security answer for the user account in the membership table and <see cref="P:WebMatrix.WebData.SimpleMembershipProvider.RequiresQuestionAndAnswer" /> is true.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.ResetPasswordWithToken(System.String,System.String)">
-      <summary>指定されたパスワード リセット トークンが有効であることを確認した後にパスワードをリセットします。</summary>
-      <returns>パスワードが変更された場合は true、それ以外の場合は false。</returns>
-      <param name="token">パスワード リセット トークン。</param>
-      <param name="newPassword">新しいパスワード。</param>
+      <summary>Resets a password after verifying that the specified password reset token is valid.</summary>
+      <returns>true if the password was changed; otherwise, false.</returns>
+      <param name="token">A password reset token.</param>
+      <param name="newPassword">The new password.</param>
       <exception cref="T:System.ArgumentException">
-        <paramref name="newPassword" /> が null または空です。</exception>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> クラスは <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドの呼び出しを使用して初期化されませんでした。</exception>
+        <paramref name="newPassword" /> is null or empty.</exception>
+      <exception cref="T:System.InvalidOperationException">The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> class was not initialized using a call to the <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.StoreOAuthRequestToken(System.String,System.String)"></member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.UnlockUser(System.String)">
-      <summary>メンバーシップ ユーザーを検証できるようにユーザー アカウントのロックを解除します。</summary>
-      <returns>ユーザー アカウントのロックが解除された場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ロックを解除するユーザー アカウントのユーザー。</param>
+      <summary>Unlocks a user account so that the membership user can be validated.</summary>
+      <returns>true if the user account was unlocked; otherwise, false.</returns>
+      <param name="userName">The user whose user account you want to unlock.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.UpdateUser(System.Web.Security.MembershipUser)">
-      <summary>ユーザー情報を更新します。</summary>
-      <param name="user">更新するユーザー アカウント、およびそのユーザー アカウントの更新情報を表すオブジェクト。</param>
+      <summary>Updates user information.</summary>
+      <param name="user">An object that represents the user account to update and the information to update for that user account.</param>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.UserIdColumn">
-      <summary>ユーザー ID が含まれるデータベース列の名前を取得または設定します。</summary>
-      <returns>ユーザー ID を含むデータベース列の名前。</returns>
+      <summary>Gets or sets the name of the database column that contains user IDs.</summary>
+      <returns>The name of the database column that contains user IDs.</returns>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.UserNameColumn">
-      <summary>ユーザー名が含まれるデータベース列の名前を取得または設定します。</summary>
-      <returns>ユーザー名を含むデータベース列の名前。</returns>
+      <summary>Gets or sets the name of the database column that contains user names.</summary>
+      <returns>The name of the database column that contains user names.</returns>
     </member>
     <member name="P:WebMatrix.WebData.SimpleMembershipProvider.UserTableName">
-      <summary>ユーザー情報が含まれるデータベース テーブルの名前を取得または設定します。</summary>
-      <returns>ユーザー情報が含まれるデータベース テーブルの名前。</returns>
+      <summary>Gets or sets the name of the database table that contains user information.</summary>
+      <returns>The name of the database table that contains user information.</returns>
     </member>
     <member name="M:WebMatrix.WebData.SimpleMembershipProvider.ValidateUser(System.String,System.String)">
-      <summary>指定されたユーザー アカウントおよびパスワードが存在することを検証します。</summary>
-      <returns>指定されたユーザー名とパスワードが存在し、アカウントが確認された場合は true、それ以外の場合は false。</returns>
-      <param name="username">検証するユーザー アカウントの名前。</param>
-      <param name="password">指定されたユーザーのパスワード。</param>
+      <summary>Verifies that the specified user account and password exist.</summary>
+      <returns>true if the specified user name and password exist, and if the account has been confirmed; otherwise, false.</returns>
+      <param name="username">The name of the user account to validate.</param>
+      <param name="password">The password for the specified user.</param>
       <exception cref="T:System.ArgumentException">
-        <paramref name="username" /> または <paramref name="password" /> が null または空です。</exception>
+        <paramref name="username" /> or <paramref name="password" /> are null or empty.</exception>
     </member>
     <member name="T:WebMatrix.WebData.SimpleRoleProvider">
-      <summary>ロール管理の基本機能を提供します。</summary>
+      <summary>Provides basic role-management functionality.</summary>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.#ctor">
-      <summary>
-        <see cref="T:WebMatrix.WebData.SimpleRoleProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+      <summary>Initializes a new instance of the <see cref="T:WebMatrix.WebData.SimpleRoleProvider" /> class.</summary>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.#ctor(System.Web.Security.RoleProvider)">
-      <summary>指定されたロール プロバイダーを使用して、<see cref="T:WebMatrix.WebData.SimpleRoleProvider" /> クラスの新しいインスタンスを初期化します。</summary>
-      <param name="previousProvider">以前のロール プロバイダー。</param>
+      <summary>Initializes a new instance of the <see cref="T:WebMatrix.WebData.SimpleRoleProvider" /> class by using the specified role provider.</summary>
+      <param name="previousProvider">The previous role provider.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.AddUsersToRoles(System.String[],System.String[])">
-      <summary>指定されたユーザー名を指定されたロールに追加します。</summary>
-      <param name="usernames">追加するユーザー名。</param>
-      <param name="roleNames">名前を追加するロール。</param>
-      <exception cref="T:System.InvalidOperationException">1 人以上の指定されたユーザーが 1 つ以上の指定されたロールに存在します。</exception>
+      <summary>Adds the specified user names to the specified roles.</summary>
+      <param name="usernames">The user names to add.</param>
+      <param name="roleNames">The roles to add the names to.</param>
+      <exception cref="T:System.InvalidOperationException">One or more of the specified users already exists in one or more of the specified roles.</exception>
     </member>
     <member name="P:WebMatrix.WebData.SimpleRoleProvider.ApplicationName">
-      <summary>ロール情報を格納および取得するアプリケーションの名前を取得または設定します。</summary>
-      <returns>ロール情報を格納および取得するアプリケーションの名前。</returns>
+      <summary>Gets or sets the name of the application to store and retrieve role information for.</summary>
+      <returns>The name of the application to store and retrieve role information for.</returns>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.CreateRole(System.String)">
-      <summary>新しいロールを追加します。</summary>
-      <param name="roleName">作成するロールの名前。</param>
-      <exception cref="T:System.InvalidOperationException">ロールは既に存在します。</exception>
+      <summary>Adds a new role.</summary>
+      <param name="roleName">The name of the role to create.</param>
+      <exception cref="T:System.InvalidOperationException">The role already exists.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.DeleteRole(System.String,System.Boolean)">
-      <summary>指定されたロールを削除します。</summary>
-      <returns>ロールが削除された場合は true、それ以外の場合は false。</returns>
-      <param name="roleName">削除するロールの名前。</param>
-      <param name="throwOnPopulatedRole">1 人以上のユーザーが <paramref name="roleName" /> に含まれる場合に例外がスローされるようにするには true。この場合、指定されたロールは削除されません。</param>
+      <summary>Deletes the specified role.</summary>
+      <returns>true if the role was deleted; otherwise, false.</returns>
+      <param name="roleName">The name of the role to delete.</param>
+      <param name="throwOnPopulatedRole">true to cause an exception to be thrown if one or more users are in <paramref name="roleName" />. In that case, the specified role is not deleted.</param>
       <exception cref="T:System.InvalidOperationException">
-        <paramref name="roleName" /> に 1 つ以上のメンバーが含まれており、<paramref name="throwOnPopulatedRole" /> は true です。</exception>
+        <paramref name="roleName" /> has one or more members, and <paramref name="throwOnPopulatedRole" /> is true.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.FindUsersInRole(System.String,System.String)">
-      <summary>指定されたロールの指定されたユーザーすべてを返します。</summary>
-      <returns>名前が <paramref name="usernameToMatch" /> と一致し、指定されたロールに存在するすべてのユーザーの名前。</returns>
-      <param name="roleName">検索対象のロール。</param>
-      <param name="usernameToMatch">検索するユーザー名。</param>
+      <summary>Returns all of the specified users who are in the specified role.</summary>
+      <returns>The names of all of the users where the user name matches <paramref name="usernameToMatch" /> and the user is in the specified role.</returns>
+      <param name="roleName">The role to search in.</param>
+      <param name="usernameToMatch">The user name to search for.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.GetAllRoles">
-      <summary>すべてのロールのリストを返します。</summary>
-      <returns>すべてのロールの名前。</returns>
+      <summary>Returns a list of all roles.</summary>
+      <returns>The names of all of the roles.</returns>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.GetRolesForUser(System.String)">
-      <summary>指定されたユーザーのロールのリストを返します。</summary>
-      <returns>指定されたユーザーがメンバーになっているすべてのロールの名前。</returns>
-      <param name="username">ロールのリストを返すユーザー。</param>
-      <exception cref="T:System.InvalidOperationException">指定されたユーザーにはメンバーシップ アカウントがありません。</exception>
+      <summary>Returns a list of the roles that a specified user is in.</summary>
+      <returns>The names of all of the roles that the specified user is a member of.</returns>
+      <param name="username">The user to return a list of roles for.</param>
+      <exception cref="T:System.InvalidOperationException">The specified user does not have a membership account.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.GetUsersInRole(System.String)">
-      <summary>指定されたロールに含まれるユーザー名を返します。</summary>
-      <returns>指定されたロールに含まれるユーザー名。</returns>
-      <param name="roleName">ロールの名前。</param>
+      <summary>Returns the user names that are in the specified role.</summary>
+      <returns>The user names that are in the specified role.</returns>
+      <param name="roleName">The name of the role.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.IsUserInRole(System.String,System.String)">
-      <summary>指定されたユーザーが指定されたロールに含まれているかどうかを示す値を返します。</summary>
-      <returns>ユーザーがロールに含まれている場合は true、それ以外の場合は false。</returns>
-      <param name="username">ユーザー名。</param>
-      <param name="roleName">ロールの名前。</param>
+      <summary>Returns a value that indicates whether the specified user is in the specified role.</summary>
+      <returns>true if the user is in the role; otherwise, false. </returns>
+      <param name="username">The user name.</param>
+      <param name="roleName">The name of the role.</param>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.RemoveUsersFromRoles(System.String[],System.String[])">
-      <summary>指定されたユーザー名を指定されたロールから削除します。</summary>
-      <param name="usernames">指定されたロールから削除するユーザー名。</param>
-      <param name="roleNames">指定されたユーザー名を削除するロール名。</param>
-      <exception cref="T:System.InvalidOperationException">指定された 1 つ以上のロールが存在しません。または1 人以上のユーザーが指定された一部のロールに含まれていません。</exception>
-      <exception cref="T:System.Configuration.Provider.ProviderException">データベース操作に失敗しました。</exception>
+      <summary>Removes the specified user names from the specified roles.</summary>
+      <param name="usernames">The user names to remove from the specified roles.</param>
+      <param name="roleNames">The role names to remove the specified user names from.</param>
+      <exception cref="T:System.InvalidOperationException">One or more of the specified roles do not exist.-or-One or more users are not in all of the specified roles.</exception>
+      <exception cref="T:System.Configuration.Provider.ProviderException">The database operation failed.</exception>
     </member>
     <member name="M:WebMatrix.WebData.SimpleRoleProvider.RoleExists(System.String)">
-      <summary>指定されたロールが存在するかどうかを示す値を返します。</summary>
-      <returns>ロールが存在する場合は true、それ以外の場合は false。</returns>
-      <param name="roleName">ロールの名前。</param>
+      <summary>Returns a value that indicates whether a specified role exists.</summary>
+      <returns>true if the role exists; otherwise, false.</returns>
+      <param name="roleName">The name of the role.</param>
     </member>
     <member name="P:WebMatrix.WebData.SimpleRoleProvider.UserIdColumn">
-      <summary>ユーザー ID が含まれるデータベース列の名前を取得します。</summary>
-      <returns>ユーザー ID が含まれる <see cref="P:WebMatrix.WebData.SimpleRoleProvider.UserTableName" /> テーブルのデータベース列の名前。</returns>
+      <summary>Gets the name of the database column that contains user IDs.</summary>
+      <returns>The name of the database column in the <see cref="P:WebMatrix.WebData.SimpleRoleProvider.UserTableName" /> table that contains user IDs.</returns>
     </member>
     <member name="P:WebMatrix.WebData.SimpleRoleProvider.UserNameColumn">
-      <summary>ユーザー名が含まれるデータベース列の名前を取得します。</summary>
-      <returns>ユーザー名が含まれる <see cref="P:WebMatrix.WebData.SimpleRoleProvider.UserTableName" /> テーブルのデータベース列の名前。</returns>
+      <summary>Gets the name of the database column that contains user names.</summary>
+      <returns>The name of the database column in the <see cref="P:WebMatrix.WebData.SimpleRoleProvider.UserTableName" /> table that contains user names.</returns>
     </member>
     <member name="P:WebMatrix.WebData.SimpleRoleProvider.UserTableName">
-      <summary>ユーザー情報が含まれるデータベース テーブルの名前を取得します。</summary>
-      <returns>ユーザー情報が含まれる <see cref="P:WebMatrix.WebData.SimpleRoleProvider.UserTableName" /> テーブルのデータベース テーブルの名前。</returns>
+      <summary>Gets the name of the database table that contains user information.</summary>
+      <returns>The name of the database table in the <see cref="P:WebMatrix.WebData.SimpleRoleProvider.UserTableName" /> table that contains user information.</returns>
     </member>
     <member name="T:WebMatrix.WebData.WebSecurity">
-      <summary>ユーザー アカウントの作成、ユーザーのログインおよびログアウト、パスワードのリセットまたは変更、関連するタスクの実行など、ASP.NET Web Pages アプリケーションにセキュリティ機能と認証機能を提供します。</summary>
+      <summary>Provides security and authentication features for ASP.NET Web Pages applications, including the ability to create user accounts, log users in and out, reset or change passwords, and perform related tasks.</summary>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.ChangePassword(System.String,System.String,System.String)">
-      <summary>指定されたユーザーのパスワードを変更します。</summary>
-      <returns>パスワードが正常に変更された場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="currentPassword">ユーザーの現在のパスワード。</param>
-      <param name="newPassword">新しいパスワード。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Changes the password for the specified user.</summary>
+      <returns>true if the password is successfully changed; otherwise, false.</returns>
+      <param name="userName">The user name.</param>
+      <param name="currentPassword">The current password for the user.</param>
+      <param name="newPassword">The new password.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.ConfirmAccount(System.String)">
-      <summary>アカウントが有効であることを確認し、アカウントをアクティブにします。</summary>
-      <returns>アカウントが確認された場合は true、それ以外の場合は false。</returns>
-      <param name="accountConfirmationToken">認証プロバイダーに渡す確認トークン。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Confirms that an account is valid and activates the account.</summary>
+      <returns>true if the account is confirmed; otherwise, false.</returns>
+      <param name="accountConfirmationToken">A confirmation token to pass to the authentication provider.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.ConfirmAccount(System.String,System.String)">
-      <summary>指定されたユーザー名のアカウントが有効であることを確認し、アカウントをアクティブにします。</summary>
-      <returns>アカウントが確認された場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="accountConfirmationToken">認証プロバイダーに渡す確認トークン。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Confirms that an account for the specified user name is valid and activates the account.</summary>
+      <returns>true if the account is confirmed; otherwise, false.</returns>
+      <param name="userName">The user name.</param>
+      <param name="accountConfirmationToken">A confirmation token to pass to the authentication provider.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.CreateAccount(System.String,System.String,System.Boolean)">
-      <summary>指定されたユーザー名とパスワードを使用して新しいメンバーシップ アカウントを作成します。必要に応じて、ユーザーがアカウントを明示的に確認することを必須に指定することもできます。</summary>
-      <returns>アカウントを確認するためにユーザーに送信できるトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="password">パスワード。</param>
-      <param name="requireConfirmationToken">(省略可能) トークンの戻り値を使用してアカウントを確認することを必須と指定するには true、それ以外の場合は false。既定値は false です。</param>
+      <summary>Creates a new membership account using the specified user name and password and optionally lets you specify that the user must explicitly confirm the account.</summary>
+      <returns>A token that can be sent to the user to confirm the account.</returns>
+      <param name="userName">The user name.</param>
+      <param name="password">The password.</param>
+      <param name="requireConfirmationToken">(Optional) true to specify that the account must be confirmed by using the token return value; otherwise, false. The default is false. </param>
       <exception cref="T:System.Web.Security.MembershipCreateUserException">
-        <paramref name="username" /> が空です。または<paramref name="username" /> に既にメンバーシップ アカウントがあります。または<paramref name="password" /> が空です。または<paramref name="password" /> が長すぎます。またはデータベース操作に失敗しました。</exception>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+        <paramref name="username" /> is empty.-or-<paramref name="username" /> already has a membership account.-or-<paramref name="password" /> is empty.-or-<paramref name="password" /> is too long.-or-The database operation failed.</exception>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.CreateUserAndAccount(System.String,System.String,System.Object,System.Boolean)">
-      <summary>新しいユーザー プロファイル エントリと新しいメンバーシップ アカウントを作成します。</summary>
-      <returns>ユーザー アカウントを確認するためにユーザーに送信できるトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="password">ユーザーのパスワード。</param>
-      <param name="propertyValues">(省略可能) 追加のユーザー属性を含むディクショナリ。既定値は null です。</param>
-      <param name="requireConfirmationToken">(省略可能) ユーザー アカウントを確認する必要があることを指定する場合は true、それ以外の場合は false。既定値は false です。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Creates a new user profile entry and a new membership account.</summary>
+      <returns>A token that can be sent to the user to confirm the user account.</returns>
+      <param name="userName">The user name.</param>
+      <param name="password">The password for the user.</param>
+      <param name="propertyValues">(Optional) A dictionary that contains additional user attributes. The default is null.</param>
+      <param name="requireConfirmationToken">(Optional) true to specify that the user account must be confirmed; otherwise, false. The default is false.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="P:WebMatrix.WebData.WebSecurity.CurrentUserId">
-      <summary>現在のユーザーの ID を取得します。</summary>
-      <returns>現在のユーザーの ID。</returns>
+      <summary>Gets the ID for the current user.</summary>
+      <returns>The ID for the current user.</returns>
     </member>
     <member name="P:WebMatrix.WebData.WebSecurity.CurrentUserName">
-      <summary>現在のユーザー名を取得します。</summary>
-      <returns>現在のユーザーの名前。</returns>
+      <summary>Gets the user name for the current user.</summary>
+      <returns>The name of the current user.</returns>
     </member>
     <member name="F:WebMatrix.WebData.WebSecurity.EnableSimpleMembershipKey">
-      <summary>
-        <see cref="P:System.Configuration.ConfigurationManager.AppSettings" /> プロパティの enableSimpleMembership 値に対するキーを表します。</summary>
+      <summary>Represents the key to the enableSimpleMembership value in the <see cref="P:System.Configuration.ConfigurationManager.AppSettings" /> property.</summary>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.GeneratePasswordResetToken(System.String,System.Int32)">
-      <summary>電子メールでユーザーに送信できるパスワード リセット トークンを生成します。</summary>
-      <returns>ユーザーに送信するトークン。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="tokenExpirationInMinutesFromNow">(省略可能) パスワード リセット トークンが期限切れになるまでの時間 (分単位)。既定値は 1440 (24 時間) です。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Generates a password reset token that can be sent to a user in email.</summary>
+      <returns>A token to send to the user.</returns>
+      <param name="userName">The user name.</param>
+      <param name="tokenExpirationInMinutesFromNow">(Optional) The time in minutes until the password reset token expires. The default is 1440 (24 hours).</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.GetCreateDate(System.String)">
-      <summary>指定されたメンバーシップ アカウントが作成された日時を返します。</summary>
-      <returns>メンバーシップ アカウントが作成された日時。アカウントの作成日を使用できない場合は <see cref="F:System.DateTime.MinValue" />。</returns>
-      <param name="userName">メンバーシップ アカウントのユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Returns the date and time when the specified membership account was created.</summary>
+      <returns>The date and time that the membership account was created, or <see cref="F:System.DateTime.MinValue" /> if the account creation date is not available.</returns>
+      <param name="userName">The user name for the membership account.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.GetLastPasswordFailureDate(System.String)">
-      <summary>指定されたアカウントのパスワードが最後に誤入力された日時を返します。</summary>
-      <returns>このアカウントのパスワードが最後に誤入力された日時。このアカウントのパスワードが誤入力されていない場合は <see cref="F:System.DateTime.MinValue" />。</returns>
-      <param name="userName">メンバーシップ アカウントのユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Returns the date and time when an incorrect password was most recently entered for the specified account.</summary>
+      <returns>The date and time when an incorrect password was most recently entered for this account, or <see cref="F:System.DateTime.MinValue" /> if an incorrect password has not been entered for this account.</returns>
+      <param name="userName">The user name of the membership account.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.GetPasswordChangedDate(System.String)">
-      <summary>指定されたメンバーシップ アカウントに対してパスワードが最近変更された日時を返します。</summary>
-      <returns>パスワードが最後に変更された日時。このアカウントのパスワードが変更されたことがない場合は <see cref="F:System.DateTime.MinValue" />。</returns>
-      <param name="userName">アカウントのユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Returns the date and time when the password was most recently changed for the specified membership account.</summary>
+      <returns>The date and time when the password was most recently changed, or <see cref="F:System.DateTime.MinValue" /> if the password has not been changed for this account.</returns>
+      <param name="userName">The user name of the account.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.GetPasswordFailuresSinceLastSuccess(System.String)">
-      <summary>最後の正常なログイン以降、またはメンバーシップ アカウントの作成以降に、指定されたアカウントのパスワードが誤入力された回数を返します。</summary>
-      <returns>指定されたアカウントのパスワードの試行が失敗した回数。</returns>
-      <param name="userName">アカウントのユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Returns the number of times that the password for the specified account was incorrectly entered since the last successful login or since the membership account was created.</summary>
+      <returns>The count of failed password attempts for the specified account.</returns>
+      <param name="userName">The user name of the account.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.GetUserId(System.String)">
-      <summary>指定されたユーザー名に基づいてユーザーの ID を返します。</summary>
-      <returns>ユーザー ID。</returns>
-      <param name="userName">ユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Returns the ID for a user based on the specified user name.</summary>
+      <returns>The user ID.</returns>
+      <param name="userName">The user name.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.GetUserIdFromPasswordResetToken(System.String)">
-      <summary>パスワード リセット トークンからユーザー ID を返します。</summary>
-      <returns>ユーザー ID。</returns>
-      <param name="token">パスワード リセット トークン。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Returns a user ID from a password reset token.</summary>
+      <returns>The user ID.</returns>
+      <param name="token">The password reset token.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="P:WebMatrix.WebData.WebSecurity.HasUserId">
-      <summary>現在のユーザーにユーザー ID があるかどうかを示す値を取得します。</summary>
-      <returns>ユーザーにユーザー ID がある場合は true、それ以外の場合は false。</returns>
+      <summary>Gets a value that indicates whether the current user has a user ID.</summary>
+      <returns>true if the user has a user ID; otherwise, false.</returns>
     </member>
     <member name="P:WebMatrix.WebData.WebSecurity.Initialized">
-      <summary>
-        <see cref="M:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection(System.String,System.String,System.String,System.String,System.Boolean)" /> メソッドが呼び出されたかどうかを示す値を取得します。</summary>
-      <returns>初期化メソッドが呼び出された場合は true、それ以外の場合は false。</returns>
+      <summary>Gets a value that indicates whether the <see cref="M:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection(System.String,System.String,System.String,System.String,System.Boolean)" /> method has been called.</summary>
+      <returns>true if the initialization method has been called; otherwise, false.</returns>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection(System.String,System.String,System.String,System.String,System.Boolean)">
-      <summary>ユーザー情報を格納するデータベースに接続して、メンバーシップ システムを初期化します。また、メンバーシップ テーブルが存在しない場合は必要に応じて作成します。</summary>
-      <param name="connectionStringName">ユーザー情報を含むデータベースの接続文字列の名前。SQL Server Compact を使用している場合は、データベース ファイル (.sdf ファイル) 名からファイル名拡張子 .sdf を除いた名前を指定できます。</param>
-      <param name="userTableName">ユーザー プロファイル情報を含むデータベース テーブルの名前。</param>
-      <param name="userIdColumn">ユーザー ID を含むデータベース列の名前。この列は整数 (int) 型である必要があります。</param>
-      <param name="userNameColumn">ユーザー名を含むデータベース列の名前。この列は、ユーザー プロファイル データをメンバーシップ アカウント データと照合するために使用されます。</param>
-      <param name="autoCreateTables">ユーザー プロファイルとメンバーシップ テーブルが存在しない場合に作成するように指定するには true、テーブルを自動的に作成しないように指定するには false。メンバーシップ テーブルは自動的に作成できますが、データベース自体は既に存在している必要があります。</param>
+      <summary>Initializes the membership system by connecting to a database that contains user information and optionally creates membership tables if they do not already exist.</summary>
+      <param name="connectionStringName">The name of the connection string for the database that contains user information. If you are using SQL Server Compact, this can be the name of the database file (.sdf file) without the .sdf file name extension.</param>
+      <param name="userTableName">The name of the database table that contains the user profile information.</param>
+      <param name="userIdColumn">The name of the database column that contains user IDs. This column must be typed as an integer (int).</param>
+      <param name="userNameColumn">The name of the database column that contains user names. This column is used to match user profile data to membership account data.</param>
+      <param name="autoCreateTables">true to indicate that user profile and membership tables should be created if they do not exist; false to indicate that tables should not be created automatically. Although the membership tables can be created automatically, the database itself must already exist.</param>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection(System.String,System.String,System.String,System.String,System.String,System.Boolean)">
-      <summary>指定されたメンバーシップまたはロール プロバイダーを使用してユーザー情報を格納するデータベースに接続し、メンバーシップ システムを初期化します。また、メンバーシップ テーブルが存在しない場合は必要に応じて作成します。</summary>
-      <param name="connectionString">ユーザー情報を含むデータベースの接続文字列の名前。SQL Server Compact を使用している場合は、データベース ファイル (.sdf ファイル) 名からファイル名拡張子 .sdf を除いた名前を指定できます。</param>
-      <param name="providerName">ADO.NET データ プロバイダーの名前。Microsoft SQL Server を使用する場合、<see cref="M:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection(System.String,System.String,System.String,System.String,System.Boolean)" /> オーバーロードが推奨されます。</param>
-      <param name="userTableName">ユーザー プロファイル情報を含むデータベース テーブルの名前。</param>
-      <param name="userIdColumn">ユーザー ID を含むデータベース列の名前。この列は整数 (int) 型である必要があります。</param>
-      <param name="userNameColumn">ユーザー名を含むデータベース列の名前。この列は、ユーザー プロファイル データをメンバーシップ アカウント データと照合するために使用されます。</param>
-      <param name="autoCreateTables">ユーザー プロファイルとメンバーシップ テーブルを自動的に作成するように指定するには true、テーブルを自動的に作成しないように指定するには false。メンバーシップ テーブルは自動的に作成できますが、データベース自体は既に存在している必要があります。</param>
+      <summary>Initializes the membership system by connecting to a database that contains user information by using the specified membership or role provider, and optionally creates membership tables if they do not already exist.</summary>
+      <param name="connectionString">The name of the connection string for the database that contains user information. If you are using SQL Server Compact, this can be the name of the database file (.sdf file) without the .sdf file name extension.</param>
+      <param name="providerName">The name of the ADO.NET data provider. If you want to use Microsoft SQL Server, the <see cref="M:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection(System.String,System.String,System.String,System.String,System.Boolean)" /> overload is recommended.</param>
+      <param name="userTableName">The name of the database table that contains the user profile information.</param>
+      <param name="userIdColumn">The name of the database column that contains user IDs. This column must be typed as an integer (int).</param>
+      <param name="userNameColumn">The name of the database column that contains user names. This column is used to match user profile data to membership account data.</param>
+      <param name="autoCreateTables">true to indicate that user profile and membership tables should be created automatically; false to indicate that tables should not be created automatically. Although the membership tables can be created automatically, the database itself must already exist.</param>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.IsAccountLockedOut(System.String,System.Int32,System.Int32)">
-      <summary>指定された秒数内にパスワードの試行が失敗した回数が多すぎたために、指定されたメンバーシップ アカウントが一時的にロックされているかどうかを示す値を返します。</summary>
-      <returns>メンバーシップ アカウントがロックされている場合は true、それ以外の場合は false。</returns>
-      <param name="userName">メンバーシップ アカウントのユーザー名。</param>
-      <param name="allowedPasswordAttempts">ユーザーに許可されているパスワードの入力試行回数。この回数を超えると、メンバーシップ アカウントはロックされます。</param>
-      <param name="intervalInSeconds">パスワードの試行回数が <paramref name="allowedPasswordAttempts" /> パラメーターの値を超えてから、ユーザー アカウントをロックするまでの秒数。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Returns a value that indicates whether the specified membership account is temporarily locked because of too many failed password attempts in the specified number of seconds.</summary>
+      <returns>true if the membership account is locked; otherwise, false.</returns>
+      <param name="userName">The user name of the membership account.</param>
+      <param name="allowedPasswordAttempts">The number of password attempts the user is permitted before the membership account is locked.</param>
+      <param name="intervalInSeconds">The number of seconds to lock a user account after the number of password attempts exceeds the value in the <paramref name="allowedPasswordAttempts" /> parameter.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.IsAccountLockedOut(System.String,System.Int32,System.TimeSpan)">
-      <summary>指定された期間にパスワードの試行が失敗した回数が多すぎたために、指定されたメンバーシップ アカウントが一時的にロックされているかどうかを示す値を返します。</summary>
-      <returns>メンバーシップ アカウントがロックされている場合は true、それ以外の場合は false。</returns>
-      <param name="userName">メンバーシップ アカウントのユーザー名。</param>
-      <param name="allowedPasswordAttempts">ユーザーに許可されているパスワードの入力試行回数。この回数を超えると、メンバーシップ アカウントはロックされます。</param>
-      <param name="interval">パスワードの試行回数が <paramref name="allowedPasswordAttempts" /> パラメーターの値を超えてから、ユーザー アカウントをロックアウトするまでの秒数。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Returns a value that indicates whether the specified membership account is temporarily locked because of too many failed password attempts in the specified time span.</summary>
+      <returns>true if the membership account is locked; otherwise, false.</returns>
+      <param name="userName">The user name of the membership account.</param>
+      <param name="allowedPasswordAttempts">The number of password attempts the user is permitted before the membership account is locked.</param>
+      <param name="interval">The number of seconds to lock out a user account after the number of password attempts exceeds the value in the <paramref name="allowedPasswordAttempts" /> parameter.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="P:WebMatrix.WebData.WebSecurity.IsAuthenticated">
-      <summary>現在のユーザーの認証ステータスを取得します。</summary>
-      <returns>現在のユーザーが認証されている場合は true、それ以外の場合は false。既定値は false です。</returns>
+      <summary>Gets the authentication status of the current user.</summary>
+      <returns>true if the current user is authenticated; otherwise, false. The default is false.</returns>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.IsConfirmed(System.String)">
-      <summary>ユーザーが確認されているかどうかを示す値を返します。</summary>
-      <returns>ユーザーが確認された場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ユーザー名。</param>
+      <summary>Returns a value that indicates whether the user has been confirmed.</summary>
+      <returns>true if the user is confirmed; otherwise, false.</returns>
+      <param name="userName">The user name.</param>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.IsCurrentUser(System.String)">
-      <summary>ログイン ユーザーのユーザー名が、指定されたユーザー名と一致しているかどうかを示す値を返します。</summary>
-      <returns>ログイン ユーザー名が <paramref name="userName" /> と一致する場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ログイン ユーザー名と比較するユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Returns a value that indicates whether the user name of the logged-in user matches the specified user name.</summary>
+      <returns>true if the logged-in user name matches <paramref name="userName" />; otherwise, false.</returns>
+      <param name="userName">The user name to compare the logged-in user name to.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.Login(System.String,System.String,System.Boolean)">
-      <summary>ユーザーをログインさせます。</summary>
-      <returns>ユーザーがログインした場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ユーザー名。</param>
-      <param name="password">パスワード。</param>
-      <param name="persistCookie">(省略可能) 現在のセッションが終了しても Cookie の認証トークンを維持するように指定するには true、それ以外の場合は false。既定値は false です。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Logs the user in.</summary>
+      <returns>true if the user was logged in; otherwise, false. </returns>
+      <param name="userName">The user name.</param>
+      <param name="password">The password.</param>
+      <param name="persistCookie">(Optional) true to specify that the authentication token in the cookie should be persisted beyond the current session; otherwise false. The default is false.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.Logout">
-      <summary>ユーザーをログアウトさせます。</summary>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Logs the user out.</summary>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.RequireAuthenticatedUser">
-      <summary>ユーザーが認証されていない場合、HTTP ステータスを 401 (Unauthorized) に設定します。</summary>
+      <summary>If the user is not authenticated, sets the HTTP status to 401 (Unauthorized).</summary>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.RequireRoles(System.String[])">
-      <summary>現在のユーザーが指定されたロールのいずれにも該当しない場合、HTTP ステータス コードを 401 (Unauthorized) に設定します。</summary>
-      <param name="roles">確認するロール。現在のユーザーは、このパラメーターで渡されるロールのいずれかに該当する必要があります。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>If the current user is not in all of the specified roles, sets the HTTP status code to 401 (Unauthorized).</summary>
+      <param name="roles">The roles to check. The current user must be in all of the roles that are passed in this parameter.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.RequireUser(System.Int32)">
-      <summary>指定されたユーザーがログインしていない場合、HTTP ステータスを 401 (Unauthorized) に設定します。</summary>
-      <param name="userId">比較するユーザーの ID。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>If the specified user is not logged on, sets the HTTP status to 401 (Unauthorized).</summary>
+      <param name="userId">The ID of the user to compare.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.RequireUser(System.String)">
-      <summary>現在のユーザーが指定されたユーザー名と一致しない場合、HTTP ステータスを 401 (Unauthorized) に設定します。</summary>
-      <param name="userName">比較するユーザーの名前。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>If the current user does not match the specified user name, sets the HTTP status to 401 (Unauthorized).</summary>
+      <param name="userName">The name of the user to compare.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.ResetPassword(System.String,System.String)">
-      <summary>パスワード リセット トークンを使用してパスワードをリセットします。</summary>
-      <returns>パスワードが変更された場合は true、それ以外の場合は false。</returns>
-      <param name="passwordResetToken">パスワード リセット トークン。</param>
-      <param name="newPassword">新しいパスワード。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Resets a password by using a password reset token.</summary>
+      <returns>true if the password was changed; otherwise, false.</returns>
+      <param name="passwordResetToken">A password reset token.</param>
+      <param name="newPassword">The new password.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
     <member name="M:WebMatrix.WebData.WebSecurity.UserExists(System.String)">
-      <summary>指定されたユーザーがメンバーシップ データベースに存在するかどうかを示す値を返します。</summary>
-      <returns>
-        <paramref name="username" /> がユーザー プロファイル テーブルに存在する場合は true、それ以外の場合は false。</returns>
-      <param name="userName">ユーザー名。</param>
-      <exception cref="T:System.InvalidOperationException">
-        <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> メソッドが呼び出されませんでした。または<see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> メソッドが呼び出されませんでした。または<see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> メンバーシップ プロバイダーはサイトの構成で登録されていません。詳細については、サイトのシステム管理者にお問い合わせください。</exception>
+      <summary>Returns a value that indicates whether the specified user exists in the membership database.</summary>
+      <returns>true if the <paramref name="username" /> exists in the user profile table; otherwise, false. </returns>
+      <param name="userName">The user name.</param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="M:WebMatrix.WebData.SimpleMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method was not called.-or-The <see cref="Overload:WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection" /> method was not called.-or-The <see cref="T:WebMatrix.WebData.SimpleMembershipProvider" /> membership provider is not registered in the configuration of your site. For more information, contact your site's system administrator.</exception>
     </member>
   </members>
 </doc>

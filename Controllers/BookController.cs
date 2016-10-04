@@ -108,7 +108,8 @@ namespace BookInventoryApp.Controllers
                                     Year = x.Year,
                                     ISBN = x.ISBN,
                                     StockLevel = x.StockLevel,
-                                    PublisherId = x.PublisherId
+                                    PublisherName = x.Publisher.Name
+                                    //PublisherId = x.PublisherId
                                 }).SingleOrDefault();
 
             PreparePublisher(model);
