@@ -48,11 +48,10 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.PublisherName)
+            @Html.LabelFor(model => model.PublisherId)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.PublisherName)
-            @Html.ValidationMessageFor(model => model.PublisherName)
+            @Html.DropDownListFor(model => model.PublisherId, Model.Publishers)
         </div>
 
         <div class="editor-label">
