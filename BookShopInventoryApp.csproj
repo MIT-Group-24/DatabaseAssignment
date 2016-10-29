@@ -189,6 +189,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PublisherController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -197,6 +198,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\BookModel.cs" />
+    <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\Operation.cs">
       <DependentUpon>Operation.dbml</DependentUpon>
     </Compile>
@@ -205,6 +207,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Operation.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\PublisherModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

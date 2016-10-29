@@ -21,7 +21,7 @@ namespace BookInventoryApp.Controllers
             IList<PublisherModel> publisherList = new List<PublisherModel>();
             var query = from publisher in context.Publishers
                         select publisher;
-
+            //7query = context.
             var publishers = query.ToList();
             foreach (var publisherData in publishers)
             {
