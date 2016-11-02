@@ -77,5 +77,65 @@ namespace BookInventoryApp.Controllers
 
             return View(model);
         }
+        public ActionResult Edit(int id)
+        {
+            PublisherModel model = context.Publishers.Where(x => x.Id == id).Select(x =>
+                                new PublisherModel()
+                                {
+                                    Id = x.Id,
+                                    Name = x.Name,
+                                    Address = x.Address,
+                                    PhoneNumber = x.PhoneNumber
+                                }).SingleOrDefault();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(PublisherModel model)
+        {
+            try
+            {
+
+                Publisher publisher = context.Publishers.Where(x => x.Id == model.Id).Single<Publisher>();
+                publisher.Name = model.Name;
+                publisher.Address = model.Address;
+                publisher.PhoneNumber = model.PhoneNumber;
+                context.SubmitChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(model);
+            }
+        }
+        public ActionResult Delete(int id)
+        {
+            PublisherModel model = context.Publishers.Where(x => x.Id == id).Select(x =>
+                                new PublisherModel()
+                                {
+                                    Id = x.Id,
+                                    Name = x.Name,
+                                    Address = x.Address,
+                                    PhoneNumber = x.PhoneNumber
+                                }).SingleOrDefault();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(PublisherModel model)
+        {
+            try
+            {
+
+                Publisher publisher = context.Publishers.Where(x => x.Id == model.Id).Single<Publisher>();
+                context.Publishers.DeleteOnSubmit(publisher);
+                context.SubmitChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(model);
+            }
+        }
     }
 }
