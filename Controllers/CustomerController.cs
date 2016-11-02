@@ -82,5 +82,64 @@ namespace BookInventoryApp.Controllers
 
             return View(model);
         }
+        public ActionResult Edit(int id)
+        {
+            CustomerModel model = context.Customers.Where(x => x.ReferenceId == id).Select(x =>
+                                new CustomerModel()
+                                {
+                                    ReferenceId = x.ReferenceId,
+                                    FirstName = x.FirstName,
+                                    LastName = x.LastName,
+                                    Address = x.Address,
+                                    Mobile = x.Mobile
+                                }).SingleOrDefault();
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Edit(CustomerModel model)
+        {
+            try
+            {
+                Customer customer = context.Customers.Where(x => x.ReferenceId == model.ReferenceId).Single<Customer>();
+                customer.FirstName = model.FirstName;
+                customer.LastName = model.LastName;
+                customer.Address = model.Address;
+                customer.Mobile = model.Mobile;
+                context.SubmitChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(model);
+            }
+        }
+        public ActionResult Delete(int id)
+        {
+            CustomerModel model = context.Customers.Where(x => x.ReferenceId == id).Select(x =>
+                                new CustomerModel()
+                                {
+                                    ReferenceId = x.ReferenceId,
+                                    FirstName = x.FirstName,
+                                    LastName = x.LastName,
+                                    Address = x.Address,
+                                    Mobile = x.Mobile
+                                }).SingleOrDefault();
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Delete(CustomerModel model)
+        {
+            try
+            {
+                Customer customer = context.Customers.Where(x => x.ReferenceId == model.ReferenceId).Single<Customer>();
+                context.Customers.DeleteOnSubmit(customer);
+                context.SubmitChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(model);
+            }
+        }
     }
 }
