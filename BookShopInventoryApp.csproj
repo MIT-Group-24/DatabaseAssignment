@@ -335,6 +335,7 @@
     <Content Include="Views\Book\Details.cshtml" />
     <Content Include="Views\Book\Edit.cshtml" />
     <Content Include="Views\Book\Delete.cshtml" />
+    <Content Include="Views\Publisher\Detailss.cshtml" />
     <Content Include="Views\Publisher\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
