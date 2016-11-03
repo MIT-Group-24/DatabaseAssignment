@@ -13,7 +13,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2016 23:03:39</publishTime>
     </File>
     <File Include="bin/BookShopInventoryApp.dll">
-      <publishTime>10/04/2016 20:10:29</publishTime>
+      <publishTime>11/02/2016 18:35:25</publishTime>
     </File>
     <File Include="bin/DotNetOpenAuth.AspNet.dll">
       <publishTime>10/01/2016 23:03:40</publishTime>
@@ -396,6 +396,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Book/Create.cshtml">
       <publishTime>10/01/2016 23:03:39</publishTime>
     </File>
+    <File Include="Views/Book/Delete.cshtml">
+      <publishTime>10/04/2016 20:58:10</publishTime>
+    </File>
+    <File Include="Views/Book/Details.cshtml">
+      <publishTime>10/04/2016 20:32:55</publishTime>
+    </File>
+    <File Include="Views/Book/Edit.cshtml">
+      <publishTime>10/04/2016 22:12:42</publishTime>
+    </File>
     <File Include="Views/Book/Index.cshtml">
       <publishTime>10/01/2016 23:03:39</publishTime>
     </File>
@@ -410,6 +419,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/Publisher/Create.cshtml">
       <publishTime>10/01/2016 23:03:39</publishTime>
+    </File>
+    <File Include="Views/Publisher/Details.cshtml">
+      <publishTime>11/02/2016 18:23:52</publishTime>
+    </File>
+    <File Include="Views/Publisher/Detailss.cshtml">
+      <publishTime>10/04/2016 22:34:55</publishTime>
+    </File>
+    <File Include="Views/Publisher/Edit.cshtml">
+      <publishTime>11/02/2016 18:23:39</publishTime>
     </File>
     <File Include="Views/Publisher/Index.cshtml">
       <publishTime>10/01/2016 23:03:39</publishTime>

@@ -1,0 +1,63 @@
+﻿@model BookShopInventoryApp.Models.BookModel
+
+@{
+    ViewBag.Title = "Book Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BookModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Author)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Author)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Year)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Year)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PublisherName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PublisherName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ISBN)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ISBN)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StockLevel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StockLevel)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

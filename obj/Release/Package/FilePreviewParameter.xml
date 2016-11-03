@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="mit-grp-24" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Theophilus\.SIGNALALLIANCE\\Desktop\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Theophilus\.SIGNALALLIANCE\\Desktop\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:w3jwslbp5n.database.windows.net,1433;Initial Catalog=MIT;User ID=mit@w3jwslbp5n;Password=group24@2016" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Theophilus\.SIGNALALLIANCE\\Desktop\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="MITConnectionString-Web.config Connection String" description="" value="Data Source=tcp:w3jwslbp5n.database.windows.net,1433;Initial Catalog=MIT;User ID=mit@w3jwslbp5n;Password=group24@2016" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Theophilus\.SIGNALALLIANCE\\Desktop\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MITConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
