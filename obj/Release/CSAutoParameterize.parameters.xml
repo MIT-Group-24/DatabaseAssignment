@@ -6,4 +6,7 @@
   <parameter name="MITConnectionString-Web.config Connection String" description="MITConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=w3jwslbp5n.database.windows.net;Initial Catalog=MIT;User ID=mit;Password=group24@2016" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\Theophilus\.SIGNALALLIANCE\\Desktop\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MITConnectionString']/@connectionString" />
   </parameter>
+  <parameter name="BookShopInventoryAppContext-Web.config Connection String" description="BookShopInventoryAppContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\v11.0; Initial Catalog=BookShopInventoryAppContext-20161103161444; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|BookShopInventoryAppContext-20161103161444.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Theophilus\.SIGNALALLIANCE\\Desktop\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BookShopInventoryAppContext']/@connectionString" />
+  </parameter>
 </parameters>

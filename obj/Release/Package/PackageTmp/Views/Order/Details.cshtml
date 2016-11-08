@@ -1,0 +1,43 @@
+﻿@model BookShopInventoryApp.Models.OrderModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>OrderModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Quantity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Quantity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrderDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrderDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BookId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BookId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CustomerReferenceId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CustomerReferenceId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.OrderNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

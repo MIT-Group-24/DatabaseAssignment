@@ -32,3 +32,4 @@ C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\Microsoft.Web.
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\bin\WebMatrix.WebData.xml
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\obj\Release\BookShopInventoryApp.dll
 C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\obj\Release\BookShopInventoryApp.pdb
+C:\Users\Theophilus.SIGNALALLIANCE\Desktop\DatabaseAssignment\obj\Release\BookShopInventoryApp.csprojResolveAssemblyReference.cache

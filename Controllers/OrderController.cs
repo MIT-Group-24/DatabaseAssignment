@@ -7,48 +7,82 @@ using BookShopInventoryApp.Models;
 
 namespace BookInventoryApp.Controllers
 {
-    public class BookController : Controller
+    public class OrderController : Controller
     {
         private OperationDataContext context;
 
-        public BookController()
+        public OrderController()
         {
             context = new OperationDataContext();
             
         }
 
-        private void PreparePublisher(BookModel model)
+        private void PrepareOrderDetails(OrderModel model)
         {
-            model.Publishers = context.Publishers.AsQueryable<Publisher>().Select(x =>
+            model.Books = context.BOOKs.AsQueryable<BOOK>().Select(x =>
                     new SelectListItem()
                     {
-                        Text = x.Name,
+                        Text = x.Title,
                         Value = x.Id.ToString()
+                    });
+            model.Customers = context.Customers.AsQueryable<Customer>().Select(x =>
+                    new SelectListItem()
+                    {
+                        Text = x.FirstName + x.LastName,
+                        Value = x.ReferenceId.ToString()
                     });
         }
 
         public ActionResult Index()
         {
-            IList<BookModel> BookList = new List<BookModel>();
-            var query = from book in context.BOOKs
-                        join publisher in context.Publishers
-                        on book.PublisherId equals publisher.Id
-                        select new BookModel
+            IList<OrderModel> OrderList = new List<OrderModel>();
+            var query = from order in context.Orders
+                        join BOOK in context.BOOKs
+                        on order.BookId equals BOOK.Id
+                        select new OrderModel
                         {
-                            Id = book.Id,
-                            Title = book.Title,
-                            PublisherName = publisher.Name,
-                            Author = book.Author,
-                            Year = book.Year,
-                            Price = book.Price,
-                            ISBN = book.ISBN,
-                            StockLevel = book.StockLevel
+                            OrderNo = order.OrderNo,
+                            Quantity = order.Quantity,
+                            OrderDate = order.OrderDate,
+                            BookName = order.BookName,
+                            CustomerName = order.CustomerName
                         };
-            BookList = query.ToList();
-            return View(BookList);
+            OrderList = query.ToList();
+            return View(OrderList);
+        }
+        
+        
+
+        public ActionResult Create()
+        {
+            OrderModel model = new OrderModel();
+            PrepareOrderDetails(model);
+            return View(model);
         }
 
-        public ActionResult Details(int id)
+        [HttpPost]
+        public ActionResult Create(OrderModel model)
+        {
+            try
+            {
+                Order order = new Order()
+                {   
+                    Quantity = model.Quantity,
+                    OrderDate = model.OrderDate,
+                    BookId = model.BookId,
+                    CustomerReferenceId = model.CustomerReferenceId
+                };
+                context.Orders.InsertOnSubmit(order);
+                context.SubmitChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(model);
+            }
+        }
+        /*
+         public ActionResult Details(int id)
         {
             BookModel model = context.BOOKs.Where(x => x.Id == id).Select(x =>
                                                 new BookModel()
@@ -65,39 +99,7 @@ namespace BookInventoryApp.Controllers
 
             return View(model);
         }
-
-        public ActionResult Create()
-        {
-            BookModel model = new BookModel();
-            PreparePublisher(model);
-            return View(model);
-        }
-
-        [HttpPost]
-        public ActionResult Create(BookModel model)
-        {
-            try
-            {
-                BOOK book = new BOOK()
-                {
-                    Title = model.Title,
-                    Author = model.Author,
-                    Year = model.Year,
-                    Price = model.Price,
-                    ISBN = model.ISBN,
-                    StockLevel = model.StockLevel,
-                    PublisherId = model.PublisherId
-                };
-                context.BOOKs.InsertOnSubmit(book);
-                context.SubmitChanges();
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View(model);
-            }
-        }
-        public ActionResult Edit(int id)
+         public ActionResult Edit(int id)
         {
             BookModel model = context.BOOKs.Where(x => x.Id == id).Select(x =>
                                 new BookModel()
@@ -171,6 +173,6 @@ namespace BookInventoryApp.Controllers
             {
                 return View(model);
             }
-        }
+        }*/
     }
 }
