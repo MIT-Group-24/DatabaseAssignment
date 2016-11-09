@@ -19,13 +19,17 @@ namespace BookShopInventoryApp.Models
         [Key]
         public int OrderNo { get; set; }
         public int Quantity { get; set; }
-        
+        //private DateTime? OrderDate = null;
         public DateTime OrderDate { get; set; }
-        public int BookId { get; set; }
-        public int CustomerReferenceId { get; set; }
+        
+
         [DisplayName("Book"), Required]
-        public IEnumerable<SelectListItem> Books { get; set; }
+        public int BookId { get; set; }
         [DisplayName("Customer"), Required]
+        public int CustomerReferenceId { get; set; }
+        
+        public IEnumerable<SelectListItem> Books { get; set; }
+        
         public IEnumerable<SelectListItem> Customers { get; set; }
         public string BookName { get; set; }
         public string CustomerName { get; set; }

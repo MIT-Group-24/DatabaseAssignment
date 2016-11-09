@@ -66,9 +66,9 @@ namespace BookInventoryApp.Controllers
             try
             {
                 Order order = new Order()
-                {   
+                {
                     Quantity = model.Quantity,
-                    OrderDate = model.OrderDate,
+                    OrderDate = model.setDate(),
                     BookId = model.BookId,
                     CustomerReferenceId = model.CustomerReferenceId
                 };
