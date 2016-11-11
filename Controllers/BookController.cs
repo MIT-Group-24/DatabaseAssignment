@@ -9,14 +9,14 @@ namespace BookInventoryApp.Controllers
 {
     public class BookController : Controller
     {
-        private OperationDataContext context;
+        private NewOperation context;
 
         public BookController()
         {
-            context = new OperationDataContext();
+            context = new NewOperation();
             
         }
-
+        
         private void PreparePublisher(BookModel model)
         {
             model.Publishers = context.Publishers.AsQueryable<Publisher>().Select(x =>
@@ -25,6 +25,8 @@ namespace BookInventoryApp.Controllers
                         Text = x.Name,
                         Value = x.Id.ToString()
                     });
+          
+            
         }
 
         public ActionResult Index()

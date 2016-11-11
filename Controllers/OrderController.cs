@@ -17,22 +17,7 @@ namespace BookInventoryApp.Controllers
             
         }
 
-        private void PrepareOrderDetails(OrderModel model)
-        {
-            model.Books = context.BOOKs.AsQueryable<BOOK>().Select(x =>
-                    new SelectListItem()
-                    {
-                        Text = x.Title,
-                        Value = x.Id.ToString()
-                    });
-            model.Customers = context.Customers.AsQueryable<Customer>().Select(x =>
-                    new SelectListItem()
-                    {
-                        Text = x.FirstName + x.LastName,
-                        Value = x.ReferenceId.ToString()
-                    });
-        }
-
+        
         public ActionResult Index()
         {
             IList<OrderModel> OrderList = new List<OrderModel>();
@@ -41,11 +26,11 @@ namespace BookInventoryApp.Controllers
                         on order.BookId equals BOOK.Id
                         select new OrderModel
                         {
-                            OrderNo = order.OrderNo,
-                            Quantity = order.Quantity,
-                            OrderDate = order.OrderDate,
-                            BookName = order.BookName,
-                            CustomerName = order.CustomerName
+                            
+                            Quantity = Convert.ToInt32(order.Quantity)
+                            
+                            //BookName = BOOK.Title
+                            //CustomerName = 
                         };
             OrderList = query.ToList();
             return View(OrderList);
@@ -56,7 +41,7 @@ namespace BookInventoryApp.Controllers
         public ActionResult Create()
         {
             OrderModel model = new OrderModel();
-            PrepareOrderDetails(model);
+            
             return View(model);
         }
 
@@ -67,10 +52,10 @@ namespace BookInventoryApp.Controllers
             {
                 Order order = new Order()
                 {
+                    
                     Quantity = model.Quantity,
-                    OrderDate = model.setDate(),
-                    BookId = model.BookId,
-                    CustomerReferenceId = model.CustomerReferenceId
+                    
+                   
                 };
                 context.Orders.InsertOnSubmit(order);
                 context.SubmitChanges();

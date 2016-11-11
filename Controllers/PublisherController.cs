@@ -10,10 +10,10 @@ namespace BookInventoryApp.Controllers
 {
     public class PublisherController : Controller
     {
-        private OperationDataContext context;
+        private NewOperation context;
         public PublisherController()
         {
-            context = new OperationDataContext();
+            context = new NewOperation();
         }
 
         public ActionResult Index()

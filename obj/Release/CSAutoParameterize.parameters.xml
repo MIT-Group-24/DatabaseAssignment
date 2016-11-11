@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-BookShopInventoryApp-20160926150601;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-BookShopInventoryApp-20160926150601.mdf" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Theophilus\.SIGNALALLIANCE\\Desktop\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\test01\\Documents\\Git\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
   <parameter name="MITConnectionString-Web.config Connection String" description="MITConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=w3jwslbp5n.database.windows.net;Initial Catalog=MIT;User ID=mit;Password=group24@2016" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Theophilus\.SIGNALALLIANCE\\Desktop\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MITConnectionString']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\test01\\Documents\\Git\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MITConnectionString']/@connectionString" />
   </parameter>
   <parameter name="BookShopInventoryAppContext-Web.config Connection String" description="BookShopInventoryAppContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\v11.0; Initial Catalog=BookShopInventoryAppContext-20161103161444; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|BookShopInventoryAppContext-20161103161444.mdf" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Theophilus\.SIGNALALLIANCE\\Desktop\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BookShopInventoryAppContext']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\test01\\Documents\\Git\\DatabaseAssignment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BookShopInventoryAppContext']/@connectionString" />
   </parameter>
 </parameters>

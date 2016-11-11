@@ -191,27 +191,22 @@
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\PublisherController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\BookModel.cs" />
-    <Compile Include="Models\BookShopInventoryAppContext.cs" />
     <Compile Include="Models\CustomerModel.cs" />
-    <Compile Include="Models\Operation.cs">
-      <DependentUpon>Operation.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Operation.designer.cs">
+    <Compile Include="Models\NewOperation.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Operation.dbml</DependentUpon>
+      <DependentUpon>NewOperation.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\PublisherModel.cs" />
+    <Compile Include="Models\TestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -271,12 +266,13 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Models\Operation.dbml">
+    <Content Include="Models\NewOperation.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Operation.designer.cs</LastGenOutput>
+      <LastGenOutput>NewOperation.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
     <None Include="Properties\PublishProfiles\BookShopApp.pubxml" />
+    <None Include="Properties\PublishProfiles\mit-grp-24 %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\mit-grp-24.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -352,8 +348,8 @@
     <Content Include="Views\Orders\Create.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Delete.cshtml" />
-    <Content Include="Views\Order\Index.cshtml" />
-    <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Test\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -365,8 +361,9 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\Operation.dbml.layout">
-      <DependentUpon>Operation.dbml</DependentUpon>
+    <None Include="Models\NewOperation.dbml.layout">
+      <DependentUpon>NewOperation.dbml</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <PropertyGroup>

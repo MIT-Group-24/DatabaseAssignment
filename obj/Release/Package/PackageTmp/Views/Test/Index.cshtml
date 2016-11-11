@@ -1,21 +1,20 @@
-﻿@model IEnumerable<BookShopInventoryApp.Models.OrderModel>
+﻿@model IEnumerable<BookShopInventoryApp.Models.TestModel>
 
 @{
-    ViewBag.Title = "order-list";
+    ViewBag.Title = "List of Orders";
 }
 
-<h2>order-list</h2>
+<h2>List of Orders</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Place Order", "Create")
 </p>
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.OrderNo)
+            @Html.DisplayNameFor(model => model.Id)
         </th>
         <th>
-<th>
             @Html.DisplayNameFor(model => model.Quantity)
         </th>
         <th>
@@ -25,15 +24,14 @@
             @Html.DisplayNameFor(model => model.BookName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerName)
+            @Html.DisplayNameFor(model => model.BookPrice)
         </th>
-        <th></th>
-    </tr>
+        <th></th></tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.OrderNo)
+            @Html.DisplayFor(modelItem => item.Id)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Quantity)
@@ -45,12 +43,12 @@
             @Html.DisplayFor(modelItem => item.BookName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CustomerName)
+            @Html.DisplayFor(modelItem => item.BookPrice)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrderNo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OrderNo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OrderNo })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

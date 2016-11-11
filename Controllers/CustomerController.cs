@@ -8,11 +8,11 @@ namespace BookInventoryApp.Controllers
 {
     public class CustomerController : Controller
     {
-        private OperationDataContext context;
+        private NewOperation context;
        
         public CustomerController()
         {
-            context = new OperationDataContext();
+            context = new NewOperation();
             
         }
         //

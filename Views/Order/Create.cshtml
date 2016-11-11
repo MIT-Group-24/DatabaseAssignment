@@ -1,7 +1,7 @@
 ﻿@model BookShopInventoryApp.Models.OrderModel
 
 @{
-    ViewBag.Title = "new-order";
+    ViewBag.Title = "Create";
 }
 
 <h2>Create</h2>
@@ -21,27 +21,10 @@
             @Html.ValidationMessageFor(model => model.Quantity)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.OrderDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.OrderDate)
-            @Html.ValidationMessageFor(model => model.OrderDate)
-        </div>
+        
 
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.BookId)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.BookId, Model.Books)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CustomerReferenceId)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.CustomerReferenceId, Model.Customers)
-        </div>
+        
 
         <p>
             <input type="submit" value="Create" />
